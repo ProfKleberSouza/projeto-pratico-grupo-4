@@ -1,8 +1,8 @@
 # TÍTULO DO PROJETO
 
-`ENGENHARIA DE COMPUTAÇÃO`
+`Engenharia de Computação`
 
-`LABORATÓRIO DE DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS`
+`Laboratório de Desenvolvimento para Dispositivos Móveis`
 
 `1º Semestre - 2021`
 
