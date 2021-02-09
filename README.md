@@ -1,18 +1,18 @@
 # TÍTULO DO PROJETO
 
-`CURSO`
+`ENGENHARIA DE COMPUTAÇÃO`
 
-`DISCIPLINA`
+`LABORATÓRIO DE DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS`
 
-`SEMESTRE`
+`1º Semestre - 2021`
 
 ## Participantes
 
 Os membros do grupo são: 
-- Obi-Wan Kenobi 
-- Anakin Skywalker
-
-> Inclua a lista dos membros da equipe com seus nomes completos.
+- Guilherme Mota Avelar Gomes
+- Ian Rafael De Souza Oliveira
+- Pedro Augusto Vaz De Souza E Silva
+- Pedro Henrique Ramos Loura
 
 # Documentação
 
