@@ -1,21 +1,7 @@
 # Introdução
 
 ## Problema
-> Nesse momento você deve apresentar o problema que a sua aplicação deve
-> resolver. No entanto, não é a hora de comentar sobre a aplicação.
-> Descreva também o contexto em que essa aplicação será usada, se
-> houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de
-> fato existir, pois ainda não é a hora de apresentar requisitos
-> detalhados ou projetos.
->
-> Nesse momento, o grupo pode optar por fazer uso
-> de ferramentas como Design Thinking, que permite um olhar de ponta a
-> ponta para o problema.
->
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+> Com a chegada da vacina contra o COVID-19 e o tamanho da população brasileira se comparado com os lotes de vacinas disponível, é necessario fazer um gerenciamento de prioridade e é inviável fazer este gerenciamento manualmente.
 
 ## Objetivos
 
@@ -44,7 +30,7 @@
 
 ## Público-Alvo
 
->Homens e mulheres, de todas faixas etárias , moradores do Brasil, com qualquer renda familiar e que tenha interesse de ser vacinado a partir de uma iniciativa privada.
+>Homens e mulheres, de todas faixas etárias, moradores do Brasil, com qualquer renda familiar e que tenha interesse de ser vacinado a partir de uma iniciativa privada.
 
 
  
