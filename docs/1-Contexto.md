@@ -5,7 +5,7 @@
 
 ## Objetivos
 
-> Construir um apliticavo que podera ser acessado por um smartfhone, capaz de realizar a gestão de agendamentos para vacinação atendando as pririodades pré-estabelicidas de um determinado posto de saúde.
+> Construir um aplicativo que poderá ser acessado por um smartphone, capaz de realizar a gestão de agendamentos para vacinação atendendo as prioridades pré-estabelecidas de um determinado posto de saúde.
 
 ## Justificativa
 
