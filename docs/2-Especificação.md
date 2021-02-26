@@ -14,12 +14,22 @@
 
 ## Histórias de Usuários
 
-Com base na análise das personas forma identificadas as seguintes histórias de usuários:
+Com base na análise das personas foram identificadas as seguintes histórias de usuários:
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
 |Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
 |Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+
+
+> A aplicação de uma vacina confere imunização ativa ou passiva ao indivíduo. Para que este processo se dê com segurança, 
+> as atividades de imunização devem ser cercadas de cuidados, adotando-se procedimentos adequados antes, durante e após a 
+> administração dos imunobiológicos. Como um usuário do aplicativo, é esperado o retorno dos seguintes dados:
+
+> 	•	Os tipos e marcas de vacina;                                                              
+> 	•	O número de doses do esquema básico e dos reforços;                                                
+> 	•	A idade para a administração de cada dose;                                                         
+> 	•	O intervalo entre uma dose e outra no caso do imunobiológico cuja proteção exija mais de uma dose. 
 
 > Apresente aqui as histórias de usuário que são relevantes para o
 > projeto de sua solução. As Histórias de Usuário consistem em uma
