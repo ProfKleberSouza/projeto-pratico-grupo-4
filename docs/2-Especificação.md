@@ -13,7 +13,7 @@
  as atividades de imunização devem ser cercadas de cuidados, adotando-se procedimentos adequados antes, durante e após a 
  administração dos imunobiológicos. Como um usuário do aplicativo, é esperado o retorno das seguintes informações:
 
-|Persona    | Historia  | Movivo |
+|Persona    | Historia  | Motivo |
 |------|-----------------------------------------|----|
 | Usuario | Desejo me cadastrar no sistema | Fazer login e ter acesso a seus dados |
 | Usuario | Desejo fazer agendamento para tomar a vacina | Agendar um dia para tomar a vacina |
