@@ -38,6 +38,9 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 | RF-006 | Notificar usuário caso agendamento disponivel para grupo prioritario | Baixa | 
 | RF-007 | Exibir data de agendamento | Média |
 | RF-008 | Permitir a escolha de dia e hora da consulta (dentro dos dias disponiveis para o grupo prioritario). | Média |
+| RF-009 | Exibir marcas de vacinas disponiveis | Baixa |
+| RF-010 | Exibir informaçoes da vacina a ser tomada | Baixa |
+
 
 
 ### Requisitos não Funcionais
