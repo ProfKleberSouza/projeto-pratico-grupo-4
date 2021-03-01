@@ -14,14 +14,14 @@
 
 ## Histórias de Usuários
 
-> A aplicação de uma vacina confere imunização ativa ou passiva ao indivíduo. Para que este processo se dê com segurança, 
-> as atividades de imunização devem ser cercadas de cuidados, adotando-se procedimentos adequados antes, durante e após a 
-> administração dos imunobiológicos. Como um usuário do aplicativo, é esperado o retorno das seguintes informações:
+ A aplicação de uma vacina confere imunização ativa ou passiva ao indivíduo. Para que este processo se dê com segurança, 
+ as atividades de imunização devem ser cercadas de cuidados, adotando-se procedimentos adequados antes, durante e após a 
+ administração dos imunobiológicos. Como um usuário do aplicativo, é esperado o retorno das seguintes informações:
 
-> 	•	Os tipos e marcas de vacina;                                                              
-> 	•	O número de doses do esquema básico e dos reforços;                                                
-> 	•	A idade para a administração de cada dose;                                                         
-> 	•	O intervalo entre uma dose e outra no caso do imunobiológico cuja proteção exija mais de uma dose. 
+ 	•	Os tipos e marcas de vacina;                                                              
+ 	•	O número de doses do esquema básico e dos reforços;                                                
+ 	•	A idade para a administração de cada dose;                                                         
+ 	•	O intervalo entre uma dose e outra no caso do imunobiológico cuja proteção exija mais de uma dose. 
 
 
 ## Requisitos
