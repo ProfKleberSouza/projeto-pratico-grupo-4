@@ -3,7 +3,7 @@
 
 ## Personas
 
-> 1-Pessoas com comorbidades tais como diabetes, pressão alta,doenças cardíacas ,pulmonares e respiratórias acima de 18 anos.
+> 1-Pessoas com comorbidades tais como diabetes, pressão alta, doenças cardíacas, pulmonares e respiratórias acima de 18 anos.
 > 2-Pessoas na 3° idade 
 
 
