@@ -52,17 +52,13 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ## Restrições
 
-O projeto está restrito pelos itens apresentados na tabela a seguir.
+As principais restrições da grande maioria dos projeto são: o prazo,  escopo (planejamento) e custos. E como não poderia ser diferente 
+aqui, os itens apresentados na tabela a seguir estão relacionados à isso, e eles impactam a forma como o projeto será gerenciado.
 
-|ID| Restrição                                             |
-|--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
-
-
-> Enumere as restrições à sua solução. Lembre-se de que as restrições
-> geralmente limitam a solução candidata.
-> 
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
+|ID| Restrição                                                                 |
+|--|---------------------------------------------------------------------------|
+|01| Cronograma: projeto divido em etapas com prazos de entrega pré definidos  |
+|02| Ferramentas de desenvolvimento do projeto são limitadas                   |
+|03| Custo ZERO: utilização de softwares livres para o desenvolvimento         |
+|04| A equipe de projeto será limitada ao máximo dos 4 alunos do grupo         |
+|05| Paradigmas e linguagens de programação determinadas pelo professor        |
