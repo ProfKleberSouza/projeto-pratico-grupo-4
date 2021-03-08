@@ -50,7 +50,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |-------|-------------------------|----|
 | RNF-001 | O sistema deve exibir em qual grupo de prioridade do usuário na tela inicial | Média |
 | RNF-002 | O Sistema deve exibir caso o usuario esteja dentro do grupo prioritario a ser atendido | Média |
-| RNF-003 | Opção de desmarcar agendamento deve estar na mesma tela que é exibido a data do agendamento | Média |
+| RNF-003 | O sistema deve ser acessivel | Média |
 
 ## Restrições
 
