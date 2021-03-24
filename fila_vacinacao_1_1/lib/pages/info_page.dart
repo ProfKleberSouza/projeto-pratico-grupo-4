@@ -68,6 +68,7 @@ class _InfoPageState extends State<InfoPage> {
                       padding:
                           const EdgeInsets.only(top: 20, right: 15, left: 15),
                       child: Form(
+                        key: _form,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,

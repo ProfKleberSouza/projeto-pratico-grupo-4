@@ -20,11 +20,16 @@ class _LoginPageState extends State<LoginPage> {
   final _senhaController = TextEditingController();
   final _emailController = TextEditingController();
 
+  bool validateEmail(String value) {
+    Pattern pattern =
+        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+    RegExp regex = new RegExp(pattern);
+    return (!regex.hasMatch(value)) ? false : true;
+  }
+
   String _validateEmail(String text) {
-    if (text.isEmpty) {
-      return ("Informe o E-mail");
-    } else if (!text.contains('@')) {
-      return ("E-mail invalido");
+    if (!validateEmail(text)) {
+      return "E-mail invalido";
     }
   }
 
@@ -37,9 +42,9 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _submit() {
-    auth.signInWithEmailAndPassword(email: _email, password: _senha);
     try {
       if (_form.currentState.validate()) {
+        auth.signInWithEmailAndPassword(email: _email, password: _senha);
         Navigator.of(context).pushNamed(AppRoutes.WIDGET_TAB);
       } else {
         showDialog(
