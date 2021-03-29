@@ -13,9 +13,11 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   String _email = '';
   String _senha = '';
-  final auth = FirebaseAuth.instance;
 
-  GlobalKey<FormState> _form = GlobalKey<FormState>();
+  GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+
+  final auth = FirebaseAuth.instance;
+  final String _userIUD = FirebaseAuth.instance.currentUser.uid;
 
   final _senhaController = TextEditingController();
   final _emailController = TextEditingController();
@@ -41,10 +43,13 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  void _submit() {
+  Future<void> _signIn() async {
     try {
-      if (_form.currentState.validate()) {
-        auth.signInWithEmailAndPassword(email: _email, password: _senha);
+      if (_formkey.currentState.validate()) {
+        UserCredential credentialUser = await auth.signInWithEmailAndPassword(
+            email: _email, password: _senha);
+
+        final String userID = _userIUD;
         Navigator.of(context).pushNamed(AppRoutes.WIDGET_TAB);
       } else {
         showDialog(
@@ -62,141 +67,139 @@ class _LoginPageState extends State<LoginPage> {
         );
       }
       return;
-    } catch (e) {
-      print("Error:${e.toString()}");
-    }
+    } catch (e) {}
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: [
-          Stack(
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [
-                    Color.fromRGBO(204, 255, 153, 0.5),
-                    Color.fromRGBO(153, 255, 255, 0.9)
-                  ], begin: Alignment.topLeft, end: Alignment.bottomRight),
-                ),
-              ),
-              Container(
-                width: double.infinity,
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 70,
-                    ),
-                    SizedBox(
-                      width: 150,
-                      height: 150,
-                      child: Image.asset(
-                        "assets/Logo.png",
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(colors: [
+            Color.fromRGBO(204, 255, 153, 0.5),
+            Color.fromRGBO(153, 255, 255, 0.9)
+          ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+        ),
+        child: ListView(
+          children: [
+            Stack(
+              children: [
+                Container(
+                  width: double.infinity,
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 70,
                       ),
-                    ),
-                    SizedBox(
-                      height: 50,
-                    ),
-                    Form(
-                      key: _form,
-                      child: Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: Container(
-                          height: 315,
-                          width: double.infinity,
-                          child: Card(
-                            elevation: 20,
-                            child: Container(
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 20.0, left: 20, right: 20),
-                                    child: Container(
-                                      child: TextFormField(
-                                        onChanged: (value) {
-                                          setState(() {
-                                            _email = value.trim();
-                                          });
-                                        },
-                                        keyboardType:
-                                            TextInputType.emailAddress,
-                                        decoration: InputDecoration(
-                                            labelText: "E-mail",
+                      SizedBox(
+                        width: 150,
+                        height: 150,
+                        child: Image.asset(
+                          "assets/Logo.png",
+                        ),
+                      ),
+                      SizedBox(
+                        height: 50,
+                      ),
+                      Form(
+                        key: _formkey,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Container(
+                            height: 315,
+                            width: double.infinity,
+                            child: Card(
+                              elevation: 20,
+                              child: Container(
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 20.0, left: 20, right: 20),
+                                      child: Container(
+                                        child: TextFormField(
+                                          onChanged: (value) {
+                                            setState(() {
+                                              _email = value.trim();
+                                            });
+                                          },
+                                          keyboardType:
+                                              TextInputType.emailAddress,
+                                          decoration: InputDecoration(
+                                              labelText: "E-mail",
+                                              labelStyle: TextStyle(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.w400,
+                                                fontSize: 20,
+                                              ),
+                                              icon: Icon(Icons.email)),
+                                          validator: _validateEmail,
+                                          controller: _emailController,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 10.0, left: 20, right: 20),
+                                      child: Container(
+                                        child: TextFormField(
+                                          onChanged: (value) {
+                                            setState(() {
+                                              _senha = value.trim();
+                                            });
+                                          },
+                                          keyboardType: TextInputType.text,
+                                          obscureText: true,
+                                          decoration: InputDecoration(
+                                            icon: Icon(Icons.lock),
+                                            labelText: "Senha",
                                             labelStyle: TextStyle(
                                               color: Colors.black,
                                               fontWeight: FontWeight.w400,
                                               fontSize: 20,
                                             ),
-                                            icon: Icon(Icons.email)),
-                                        validator: _validateEmail,
-                                        controller: _emailController,
+                                          ),
+                                          controller: _senhaController,
+                                          validator: _validateSenha,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 10.0, left: 20, right: 20),
-                                    child: Container(
-                                      child: TextFormField(
-                                        onChanged: (value) {
-                                          setState(() {
-                                            _senha = value.trim();
-                                          });
-                                        },
-                                        keyboardType: TextInputType.text,
-                                        obscureText: true,
-                                        decoration: InputDecoration(
-                                          icon: Icon(Icons.lock),
-                                          labelText: "Senha",
-                                          labelStyle: TextStyle(
+                                    SizedBox(
+                                      height: 50,
+                                    ),
+                                    Container(
+                                      width: 200,
+                                      height: 50,
+                                      child: ElevatedButton(
+                                        onPressed: _signIn,
+                                        child: Text(
+                                          "Entrar",
+                                          style: TextStyle(
                                             color: Colors.black,
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: 20,
+                                            fontSize: 24,
                                           ),
                                         ),
-                                        controller: _senhaController,
-                                        validator: _validateSenha,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 50,
-                                  ),
-                                  Container(
-                                    width: 200,
-                                    height: 50,
-                                    child: ElevatedButton(
-                                      onPressed: _submit,
-                                      child: Text(
-                                        "Entrar",
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 24,
+                                        style: ButtonStyle(
+                                          backgroundColor:
+                                              MaterialStateProperty.all<Color>(
+                                                  Colors.greenAccent[100]),
                                         ),
                                       ),
-                                      style: ButtonStyle(
-                                        backgroundColor:
-                                            MaterialStateProperty.all<Color>(
-                                                Colors.greenAccent[100]),
-                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

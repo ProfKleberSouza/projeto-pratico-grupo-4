@@ -1,5 +1,4 @@
 import '../models/user.dart';
-
 import 'package:flutter/material.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -13,6 +12,7 @@ class InfoPage extends StatefulWidget {
 
 class _InfoPageState extends State<InfoPage> {
   var snapshots = FirebaseFirestore.instance.collection('usuarios').snapshots();
+
   final _form = GlobalKey<FormState>();
 
   Map<String, String> _formData = {};
