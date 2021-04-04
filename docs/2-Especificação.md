@@ -31,7 +31,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-| RF-001 | Permitir cadastro de usuário | Alta |
+| RF-001 | Permitir login de usuário | Alta |
 | RF-002 | Definir grupo de prioridade do usuário | Alta |
 | RF-003 | Permitir agendamendo para usuários dentro do grupo prioritario | Alta |
 | RF-004 | Exibir grupo de prioridade do usuário | Média |
