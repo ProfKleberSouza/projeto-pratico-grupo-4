@@ -19,6 +19,12 @@ etiquetas:
 - `enhancement`: uma funcionalidade precisa ser melhorada
 - `feature`: uma nova funcionalidade precisa ser introduzida
 
+## Ferramentas
+- VSCode
+- Microsoft Teams
+- Git
+- Figma
+- Flowmapp
 ## Hospedagem
 
 O Github foi utilizado para a hospedagem do repositiorio do projeto.
