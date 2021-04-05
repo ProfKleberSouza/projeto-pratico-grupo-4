@@ -50,9 +50,8 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-| RNF-001 | O sistema deve exibir em qual grupo de prioridade do usuário na tela inicial | Média |
-| RNF-002 | O Sistema deve exibir caso o usuario esteja dentro do grupo prioritario a ser atendido | Média |
-| RNF-003 | O sistema deve ser acessivel | Média |
+| RNF-001 | O sistema deve ser responsivo | Média |
+| RNF-002 |  O sistema deve ser acessivel | Média |
 
 ## Restrições
 
@@ -66,3 +65,4 @@ aqui, os itens apresentados na tabela a seguir estão relacionados à isso, e el
 |03| Custo ZERO: utilização de softwares livres para o desenvolvimento         |
 |04| A equipe de projeto será limitada ao máximo dos 4 alunos do grupo         |
 |05| Paradigmas e linguagens de programação determinadas pelo professor        |
+|06| Todos os dados serão disponibilizados pela clinica, como dados de usuários, datas e vacinas |
