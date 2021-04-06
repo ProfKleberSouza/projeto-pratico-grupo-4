@@ -1,30 +1,29 @@
 import 'package:flutter/material.dart';
 
-class User {
-  final String id;
-  final String cpf;
-  final String nome;
-  final String datadenascimento;
-  final String profissao;
-  final String sexo;
-  final String email;
-  final String endereco;
-  final String numero;
-  final String cep;
-  final String fone;
-  final String senha;
+class UserModel {
+  String id;
+  String cpf;
+  String nome;
+  String datadenascimento;
+  String profissao;
+  String sexo;
+  String email;
+  String endereco;
+  String numero;
+  String cep;
+  String fone;
 
-  const User(
-      {this.id,
-      @required this.nome,
-      @required this.email,
-      @required this.sexo,
-      @required this.datadenascimento,
-      @required this.profissao,
-      @required this.cpf,
-      @required this.endereco,
-      @required this.numero,
-      @required this.cep,
-      @required this.fone,
-      this.senha});
+  UserModel({
+    this.id,
+    this.nome,
+    this.email,
+    this.sexo,
+    this.datadenascimento,
+    this.profissao,
+    this.cpf,
+    this.endereco,
+    this.numero,
+    this.cep,
+    this.fone,
+  });
 }

@@ -1,5 +1,6 @@
 class AppRoutes {
-  static const LOGIN_PAGE = '/'; //Home
+  static const ROOT_PAGE = '/';
+  static const LOGIN_PAGE = '/ login_page';
   static const WIDGET_TAB = '/ widget_tab';
   static const INFO_PAGE = '/ info_page';
 }

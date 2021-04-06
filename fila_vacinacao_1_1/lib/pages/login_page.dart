@@ -1,23 +1,22 @@
-import 'package:fila_vacinacao_1_1/routes/app_routes.dart';
-
+import 'package:fila_vacinacao_1_1/models/user.dart';
+import 'package:fila_vacinacao_1_1/provider/users.dart';
+import 'package:fila_vacinacao_1_1/services/auth.dart';
+import 'package:provider/provider.dart';
 import '../routes/app_routes.dart';
-import '../models/user.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
+  LoginPage();
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
   String _email = '';
-  String _senha = '';
+  String _password = '';
 
-  GlobalKey<FormState> _formkey = GlobalKey<FormState>();
-
-  final auth = FirebaseAuth.instance;
-  final String _userIUD = FirebaseAuth.instance.currentUser.uid;
+  GlobalKey<FormState> _formkeyLogin = GlobalKey<FormState>();
 
   final _senhaController = TextEditingController();
   final _emailController = TextEditingController();
@@ -43,31 +42,15 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  Future<void> _signIn() async {
-    try {
-      if (_formkey.currentState.validate()) {
-        UserCredential credentialUser = await auth.signInWithEmailAndPassword(
-            email: _email, password: _senha);
-
-        final String userID = _userIUD;
-        Navigator.of(context).pushNamed(AppRoutes.WIDGET_TAB);
-      } else {
-        showDialog(
-          context: context,
-          builder: (ctx) => AlertDialog(
-            content: Text("E-mail ou senha invalido(s)"),
-            actions: [
-              TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Text('OK'))
-            ],
-          ),
-        );
+  void singIn() async {
+    final form = _formkeyLogin.currentState;
+    if (form.validate()) {
+      try {
+        var user = Auth().singIn(_email, _password);
+      } catch (e) {
+        print("Error $e");
       }
-      return;
-    } catch (e) {}
+    }
   }
 
   @override
@@ -76,8 +59,8 @@ class _LoginPageState extends State<LoginPage> {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(colors: [
-            Color.fromRGBO(204, 255, 153, 0.5),
-            Color.fromRGBO(153, 255, 255, 0.9)
+            Color.fromRGBO(0, 0, 255, 0.9),
+            Color.fromRGBO(0, 191, 255, 0.9)
           ], begin: Alignment.topLeft, end: Alignment.bottomRight),
         ),
         child: ListView(
@@ -102,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                         height: 50,
                       ),
                       Form(
-                        key: _formkey,
+                        key: _formkeyLogin,
                         child: Padding(
                           padding: const EdgeInsets.all(20.0),
                           child: Container(
@@ -145,7 +128,7 @@ class _LoginPageState extends State<LoginPage> {
                                         child: TextFormField(
                                           onChanged: (value) {
                                             setState(() {
-                                              _senha = value.trim();
+                                              _password = value.trim();
                                             });
                                           },
                                           keyboardType: TextInputType.text,
@@ -171,7 +154,7 @@ class _LoginPageState extends State<LoginPage> {
                                       width: 200,
                                       height: 50,
                                       child: ElevatedButton(
-                                        onPressed: _signIn,
+                                        onPressed: singIn,
                                         child: Text(
                                           "Entrar",
                                           style: TextStyle(
@@ -182,7 +165,7 @@ class _LoginPageState extends State<LoginPage> {
                                         style: ButtonStyle(
                                           backgroundColor:
                                               MaterialStateProperty.all<Color>(
-                                                  Colors.greenAccent[100]),
+                                                  Colors.blue[300]),
                                         ),
                                       ),
                                     ),

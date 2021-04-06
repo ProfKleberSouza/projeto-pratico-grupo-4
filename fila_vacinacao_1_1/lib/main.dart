@@ -1,3 +1,7 @@
+import 'package:fila_vacinacao_1_1/models/user.dart';
+import 'package:fila_vacinacao_1_1/widgets/root.dart';
+import '../services/auth.dart';
+
 import './provider/users.dart';
 
 import '../widgets/widget_tab.dart';
@@ -20,14 +24,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (ctx) => new Users(),
+        StreamProvider<UserModel>.value(
+          value: Auth().user,
+          initialData: null,
         ),
+        Provider<UserProvider>(create: (_) => UserProvider()),
       ],
       child: MaterialApp(
         darkTheme: ThemeData(brightness: Brightness.dark),
         debugShowCheckedModeBanner: false,
         routes: {
+          AppRoutes.ROOT_PAGE: (_) => Root(),
           AppRoutes.LOGIN_PAGE: (_) => LoginPage(),
           AppRoutes.WIDGET_TAB: (_) => WidgetTab(),
           AppRoutes.INFO_PAGE: (_) => InfoPage(),
