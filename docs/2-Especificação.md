@@ -3,9 +3,11 @@
 
 ## Personas
 
-> 1-João tem 36 anos, sendo 10 anos como engenheiro civil trabalha em uma grande construtora vistoriando as obras em andamento em Belo Horizonte, está acima do peso e possui diabetes , pretende começar a realizar pequenas caminhadas depois do expediente para melhorar a qualidade de vida, para ter mais tempo para suas duas filhas e esposa, João está aguardando a liberação de vendas da vacina ja que e do grupo de risco e se preocupa com a saúde.
+Pessoas apartir de 18 anos, que tem desejo de tomar vacina partindo de uma iniciativa privada.
 
-> 2-Joana uma senhora simpática de 65 anos aposentada, trabalhava como dentista em uma clínica popular atendendo crianças, nós fins de semana gosta de convocar os filhos e netos para um almoço em sua casa, adora dançar e festejar mas devido a asma se cansa rápido, com a pandemia ficou sem poder fazer as coisas que gostava, esta a procura de vacinas em clínicas privadas.
+1-João tem 36 anos, sendo 10 anos como engenheiro civil trabalha em uma grande construtora vistoriando as obras em andamento em Belo Horizonte, está acima do peso e possui diabetes , pretende começar a realizar pequenas caminhadas depois do expediente para melhorar a qualidade de vida, para ter mais tempo para suas duas filhas e esposa, João está aguardando a liberação de vendas da vacina ja que e do grupo de risco e se preocupa com a saúde.
+
+2-Joana uma senhora simpática de 65 anos aposentada, trabalhava como dentista em uma clínica popular atendendo crianças, nós fins de semana gosta de convocar os filhos e netos para um almoço em sua casa, adora dançar e festejar mas devido a asma se cansa rápido, com a pandemia ficou sem poder fazer as coisas que gostava, esta a procura de vacinas em clínicas privadas.
 
 
 ## Histórias de Usuários
@@ -31,7 +33,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-| RF-001 | Permitir cadastro de usuário | Alta |
+| RF-001 | Permitir login de usuário | Alta |
 | RF-002 | Definir grupo de prioridade do usuário | Alta |
 | RF-003 | Permitir agendamendo para usuários dentro do grupo prioritario | Alta |
 | RF-004 | Exibir grupo de prioridade do usuário | Média |
@@ -48,9 +50,8 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-| RNF-001 | O sistema deve exibir em qual grupo de prioridade do usuário na tela inicial | Média |
-| RNF-002 | O Sistema deve exibir caso o usuario esteja dentro do grupo prioritario a ser atendido | Média |
-| RNF-003 | O sistema deve ser acessivel | Média |
+| RNF-001 | O sistema deve ser responsivo | Média |
+| RNF-002 |  O sistema deve ser acessivel | Média |
 
 ## Restrições
 
@@ -64,3 +65,4 @@ aqui, os itens apresentados na tabela a seguir estão relacionados à isso, e el
 |03| Custo ZERO: utilização de softwares livres para o desenvolvimento         |
 |04| A equipe de projeto será limitada ao máximo dos 4 alunos do grupo         |
 |05| Paradigmas e linguagens de programação determinadas pelo professor        |
+|06| Todos os dados serão disponibilizados pela clinica, como dados de usuários, datas e vacinas |
