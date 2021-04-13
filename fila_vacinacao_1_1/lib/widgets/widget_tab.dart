@@ -1,6 +1,6 @@
 import '../pages/info_page.dart';
 
-import '../pages/agendamento_page.dart';
+import '../pages/status_page.dart';
 
 import 'package:flutter/material.dart';
 import '../pages/settings_page.dart';
@@ -15,7 +15,7 @@ class _WidgetTabState extends State<WidgetTab> {
   final List<Map<String, Object>> _screens = [
     {
       'title': 'Agendamentos',
-      'screen': AgendamentoPage(),
+      'screen': StatusPage(),
     },
     {
       'title': 'Informações do usuário',
@@ -58,12 +58,12 @@ class _WidgetTabState extends State<WidgetTab> {
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle_rounded),
             backgroundColor: Theme.of(context).primaryColor,
-            label: 'Usuario',
+            label: 'Usuário',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             backgroundColor: Theme.of(context).primaryColor,
-            label: 'Configuração',
+            label: 'Configurações',
           ),
         ],
       ),

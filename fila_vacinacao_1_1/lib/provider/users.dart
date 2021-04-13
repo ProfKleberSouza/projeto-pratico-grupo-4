@@ -17,9 +17,4 @@ class UserProvider with ChangeNotifier {
     item.fone = user.fone;
     notifyListeners();
   }
-
-  void printUser() {
-    print(
-        '${item.nome}/${item.email}/${item.sexo}/${item.datadenascimento}/${item.profissao}/${item.cpf}/${item.cep}/${item.fone}');
-  }
 }

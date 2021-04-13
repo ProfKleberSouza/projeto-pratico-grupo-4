@@ -36,6 +36,7 @@ dev_dependencies:
   firebase_core: ^1.0.2
   firebase_auth: ^1.0.1
   provider: ^5.0.0
+  calendar_timeline: ^0.7.1
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

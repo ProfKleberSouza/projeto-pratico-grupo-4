@@ -3,4 +3,6 @@ class AppRoutes {
   static const LOGIN_PAGE = '/ login_page';
   static const WIDGET_TAB = '/ widget_tab';
   static const INFO_PAGE = '/ info_page';
+  static const AGENDAMENTO_PAGE = '/agendamento_page';
+  static const STATUS_PAGE = '/status_page';
 }

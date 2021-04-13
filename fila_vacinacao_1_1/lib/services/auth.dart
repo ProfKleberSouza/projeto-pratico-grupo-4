@@ -1,8 +1,5 @@
-import 'package:fila_vacinacao_1_1/provider/users.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 import '../models/user.dart';
-import 'package:provider/provider.dart';
 
 class Auth {
   FirebaseAuth _auth = FirebaseAuth.instance;
@@ -32,5 +29,6 @@ class Auth {
     } catch (e) {
       print('Error $e');
     }
+    return null;
   }
 }

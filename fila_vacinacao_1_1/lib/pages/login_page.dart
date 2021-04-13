@@ -1,8 +1,4 @@
-import 'package:fila_vacinacao_1_1/models/user.dart';
-import 'package:fila_vacinacao_1_1/provider/users.dart';
 import 'package:fila_vacinacao_1_1/services/auth.dart';
-import 'package:provider/provider.dart';
-import '../routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -17,9 +13,6 @@ class _LoginPageState extends State<LoginPage> {
   String _password = '';
 
   GlobalKey<FormState> _formkeyLogin = GlobalKey<FormState>();
-
-  final _senhaController = TextEditingController();
-  final _emailController = TextEditingController();
 
   bool validateEmail(String value) {
     Pattern pattern =
@@ -117,7 +110,6 @@ class _LoginPageState extends State<LoginPage> {
                                               ),
                                               icon: Icon(Icons.email)),
                                           validator: _validateEmail,
-                                          controller: _emailController,
                                         ),
                                       ),
                                     ),
@@ -142,7 +134,6 @@ class _LoginPageState extends State<LoginPage> {
                                               fontSize: 20,
                                             ),
                                           ),
-                                          controller: _senhaController,
                                           validator: _validateSenha,
                                         ),
                                       ),

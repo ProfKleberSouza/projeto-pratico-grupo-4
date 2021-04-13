@@ -1,4 +1,6 @@
 import 'package:fila_vacinacao_1_1/models/user.dart';
+import 'package:fila_vacinacao_1_1/pages/agendamentos_page.dart';
+import 'package:fila_vacinacao_1_1/pages/status_page.dart';
 import 'package:fila_vacinacao_1_1/widgets/root.dart';
 import '../services/auth.dart';
 
@@ -11,7 +13,6 @@ import '../pages/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../pages/settings_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
           value: Auth().user,
           initialData: null,
         ),
-        Provider<UserProvider>(create: (_) => UserProvider()),
+        ChangeNotifierProvider<UserProvider>(
+            create: (ctx) => new UserProvider()),
       ],
       child: MaterialApp(
         darkTheme: ThemeData(brightness: Brightness.dark),
@@ -38,6 +40,8 @@ class MyApp extends StatelessWidget {
           AppRoutes.LOGIN_PAGE: (_) => LoginPage(),
           AppRoutes.WIDGET_TAB: (_) => WidgetTab(),
           AppRoutes.INFO_PAGE: (_) => InfoPage(),
+          AppRoutes.AGENDAMENTO_PAGE: (_) => AgendamentoPage(),
+          AppRoutes.STATUS_PAGE: (_) => StatusPage(),
         },
       ),
     );
