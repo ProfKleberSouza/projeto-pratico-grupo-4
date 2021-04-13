@@ -37,6 +37,7 @@ dev_dependencies:
   firebase_auth: ^1.0.1
   provider: ^5.0.0
   calendar_timeline: ^0.7.1
+  intl: ^0.17.0
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

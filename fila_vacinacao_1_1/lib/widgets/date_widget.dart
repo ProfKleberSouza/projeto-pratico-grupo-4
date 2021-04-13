@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:calendar_timeline/calendar_timeline.dart';
+import 'package:intl/intl.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 class DatePicker extends StatefulWidget {
   @override
   _DatePickerState createState() => _DatePickerState();
 }
 
-DateTime _selectedDate = DateTime.now();
-
 class _DatePickerState extends State<DatePicker> {
+  DateTime _selectedDate = DateTime.now();
+
   @override
   void initState() {
     super.initState();
+
+    initializeDateFormatting('pt_BR');
     _resetSelectedDate();
   }
 
