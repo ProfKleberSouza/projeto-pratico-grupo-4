@@ -18,6 +18,7 @@ etiquetas:
 - `bugfix`: uma funcionalidade encontra-se com problemas
 - `enhancement`: uma funcionalidade precisa ser melhorada
 - `feature`: uma nova funcionalidade precisa ser introduzida
+- `documentation`: documentação de uma funcionalidade
 
 ## Ferramentas
 - VSCode
