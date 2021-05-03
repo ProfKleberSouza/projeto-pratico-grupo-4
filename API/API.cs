@@ -14,7 +14,7 @@ namespace API
     public static class API
     {
         [FunctionName("User")]
-        public static string Post(
+        public static async Task<IActionResult> Post(
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", "get", Route = null)] HttpRequest req,
             ILogger log)
         {
@@ -23,8 +23,8 @@ namespace API
             user.profissao = req.Query["profissao"];
             string dateString = req.Query["datadenascimento"];
             user.datadenascimento = DateTime.ParseExact(dateString, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
-
-            return UserBussiness.getUserPriorizationGroup(user).prioridade; ;
+            UserBussiness.getUserPriorizationGroup(user);
+            return new OkObjectResult(user);
         }
     }
 }

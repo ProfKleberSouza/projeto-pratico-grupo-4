@@ -14,6 +14,6 @@ namespace API
         public string numero { get; set; }
         public string profissao { get; set; }
         public string sexo { get; set; }
-        public string prioridade { get; set; }
+        public int prioridade { get; set; }
     }
 }

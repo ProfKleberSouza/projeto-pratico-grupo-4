@@ -9,27 +9,27 @@ namespace API.Business
             int idade = getAge(user.datadenascimento);
             if (idade >= 80 || healthArea(user.profissao))
             {
-                user.prioridade = "Grupo 1";
+                user.prioridade = 1;
             }
             else if (idade >= 70)
             {
-                user.prioridade = "Grupo 2";
+                user.prioridade = 2;
             }
             else if (idade >= 50)
             {
-                user.prioridade = "Grupo 3";
+                user.prioridade = 3;
             }
             else if (idade >= 40)
             {
-                user.prioridade = "Grupo 4";
+                user.prioridade = 4;
             }
             else if (idade >= 20)
             {
-                user.prioridade = "Grupo 5";
+                user.prioridade = 5;
             }
             else
             {
-                user.prioridade = "Grupo 6";
+                user.prioridade = 6;
             }
             return user;
         }
