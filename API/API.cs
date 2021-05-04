@@ -11,10 +11,14 @@ using API.Business;
 
 namespace API
 {
+    public class Prioridade
+    {
+        public int prioridade { get; set; }
+    }
     public static class API
     {
         [FunctionName("User")]
-        public static async Task<IActionResult> Post(
+        public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", "get", Route = null)] HttpRequest req,
             ILogger log)
         {
@@ -24,7 +28,10 @@ namespace API
             string dateString = req.Query["datadenascimento"];
             user.datadenascimento = DateTime.ParseExact(dateString, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
             UserBussiness.getUserPriorizationGroup(user);
-            return new OkObjectResult(user);
+            Prioridade data = new Prioridade {
+                prioridade = user.prioridade
+            };
+            return new OkObjectResult(data);
         }
     }
 }

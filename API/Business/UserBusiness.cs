@@ -6,32 +6,30 @@ namespace API.Business
     {
         public static User getUserPriorizationGroup(User user)
         {
-            int idade = getAge(user.datadenascimento);
-            if (idade >= 80 || healthArea(user.profissao))
+            try
             {
-                user.prioridade = 1;
+                int idade = getAge(user.datadenascimento);
+                if (idade >= 80 || healthArea(user.profissao))
+                    user.prioridade = 1;
+                else if (idade >= 70)
+                    user.prioridade = 2;
+                else if (idade >= 50)
+                    user.prioridade = 3;
+                else if (idade >= 40)
+                    user.prioridade = 4;
+                else if (idade >= 20)
+                    user.prioridade = 5;
+                else
+                    user.prioridade = 6;
+                return user;
+
             }
-            else if (idade >= 70)
+            catch (Exception e)
             {
-                user.prioridade = 2;
+                Console.Error.WriteLine(e);
+                return null;
             }
-            else if (idade >= 50)
-            {
-                user.prioridade = 3;
-            }
-            else if (idade >= 40)
-            {
-                user.prioridade = 4;
-            }
-            else if (idade >= 20)
-            {
-                user.prioridade = 5;
-            }
-            else
-            {
-                user.prioridade = 6;
-            }
-            return user;
+
         }
         private static int getAge(DateTime datadenascimento)
         {
