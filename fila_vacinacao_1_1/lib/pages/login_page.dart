@@ -2,16 +2,13 @@ import 'package:fila_vacinacao_1_1/services/auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
-  LoginPage();
-
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String _email = '';
-  String _password = '';
-
+  String _email;
+  String _password;
   GlobalKey<FormState> _formkeyLogin = GlobalKey<FormState>();
 
   bool validateEmail(String value) {
@@ -25,23 +22,41 @@ class _LoginPageState extends State<LoginPage> {
     if (!validateEmail(text)) {
       return "E-mail invalido";
     }
+    return null;
   }
 
-  String _validateSenha(String text) {
-    if (text.isEmpty) {
-      return ("Informe a senha");
-    } else if (text.length < 6) {
-      return ("Minimo 6 caracteres");
-    }
+  void showSnack(String erro) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      backgroundColor: Colors.red,
+      duration: Duration(seconds: 3),
+      content: Text(
+        erro,
+        textAlign: TextAlign.center,
+        style: TextStyle(color: Colors.white, fontSize: 24),
+      ),
+    ));
   }
 
   void singIn() async {
-    final form = _formkeyLogin.currentState;
-    if (form.validate()) {
-      try {
-        var user = Auth().singIn(_email, _password);
-      } catch (e) {
-        print("Error $e");
+    final isValid = _formkeyLogin.currentState.validate();
+    if (isValid) {
+      Future<String> alerta = Auth().singIn(_email, _password);
+      var erro = await alerta;
+      if (erro != null) {
+        switch (erro) {
+          case "wrong-password":
+            erro = "Senha inválida";
+            break;
+          case "user-not-found":
+            erro = "Usuário não encontrado";
+            break;
+          case "invalid-email":
+            erro = "E-mail inválido";
+            break;
+          default:
+            erro = "Falha ao logar.Tente novamente";
+        }
+        showSnack(erro);
       }
     }
   }
@@ -134,7 +149,14 @@ class _LoginPageState extends State<LoginPage> {
                                               fontSize: 20,
                                             ),
                                           ),
-                                          validator: _validateSenha,
+                                          validator: (value) {
+                                            if (value.isEmpty) {
+                                              return ("Informe a senha");
+                                            } else if (value.length < 6) {
+                                              return ("Minimo 6 caracteres");
+                                            }
+                                            return null;
+                                          },
                                         ),
                                       ),
                                     ),

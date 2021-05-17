@@ -20,7 +20,7 @@ Foi utilizado a própria ferramenta de gestão de projetos do Github com as segu
 #### Github Board
 ![Github Kanban](img/Board.png)
 ![Sprint](img/Sprint.png)
-![Sprint](img/Sprint 2.png)
+![Sprint](img/Sprint2.png)
 ## Ferramentas
 
 As ferramentas empregadas no projeto são:
@@ -35,13 +35,3 @@ As ferramentas empregadas no projeto são:
 O editor de código (VSCode) foi escolhido porque ele possui uma integração com o
 sistema de versão (GitHub) e integração com o Azure Functions, possibilitando desenvolvimento e deploy ágil. As ferramentas de comunicação utilizadas possuem
 integração semelhante e por isso foram selecionadas. Por fim, para criar diagramas utilizamos o Figma por melhor captar as necessidades da nossa solução.
-
-> Liste quais ferramentas foram empregadas no desenvolvimento do
-> projeto, justificando a escolha delas, sempre que possível.
-> 
-> **Possíveis Ferramentas que auxiliarão no gerenciamento**: 
-> - [![Slack](img/slack.jpg)](https://slack.com/)
-> - [![Trello](img/trello.png)](https://trello.com/)
-> 
-> - [![Microsof Project](img/project.png)](https://products.office.com/pt-br/project/project-and-portfolio-management-software)
-> - [![Redbooth](img/redbooth.png)](https://redbooth.com/)

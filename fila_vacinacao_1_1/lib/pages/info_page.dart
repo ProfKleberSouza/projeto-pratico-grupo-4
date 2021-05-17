@@ -1,3 +1,5 @@
+import 'package:fila_vacinacao_1_1/models/user.dart';
+import 'package:fila_vacinacao_1_1/provider/users_shared_pre.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -10,38 +12,51 @@ class InfoPage extends StatefulWidget {
 }
 
 class _InfoPageState extends State<InfoPage> {
-  static final GlobalKey<FormState> _formKeyInfoPage = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKeyInfoPage = GlobalKey<FormState>();
+  UserModel user;
   Save_Editing _saveEditing = Save_Editing.Editing;
   Map<String, String> _formData = {};
   var _snapshots = FirebaseFirestore.instance;
   bool disable = true;
 
-  void upadateData() {
-    var user = FirebaseAuth.instance;
-    user.authStateChanges();
-    _snapshots.collection('usuarios').doc(user.currentUser.uid).update({
-      'nome': _formData['nome'],
-      'email': _formData['email'],
-      'datadenascimento': _formData['datadenascimento'],
+  void updateUser(UserModel user) {
+    user.nome = _formData['nome'];
+    user.numero = _formData['numero'];
+    user.endereco = _formData['endereco'];
+    user.cep = _formData['cep'];
+    user.fone = _formData['fone'];
+    Users().saveUser(user);
+  }
+
+  void teste() async {
+    print("Entrou teste");
+    UserModel userteste = UserModel(nome: "Teste", cpf: '123456789');
+    Users().saveUser(userteste);
+    UserModel userAux = await Users().getuser();
+    print(userAux.nome);
+  }
+
+  void updateData() {
+    var _user = FirebaseAuth.instance;
+    _user.authStateChanges();
+    _snapshots.collection('usuarios').doc(_user.currentUser.uid).update({
       'numero': _formData['numero'],
       'endereco': _formData['endereco'],
       'cep': _formData['cep'],
-      'cpf': _formData['cpf'],
       'fone': _formData['fone'],
-      'profissao': _formData['profissao'],
-      'sexo': _formData['sexo'],
     });
   }
 
-  void _switchMode() {
+  void _switchMode() async {
     final isValid = _formKeyInfoPage.currentState.validate();
     if (_saveEditing == Save_Editing.Save) {
       setState(() {
         if (isValid) {
           _formKeyInfoPage.currentState.save();
-          upadateData();
-          _saveEditing = Save_Editing.Editing;
+          updateData();
+          updateUser(user);
           disable = true;
+          _saveEditing = Save_Editing.Editing;
         }
       });
     } else {
@@ -54,13 +69,13 @@ class _InfoPageState extends State<InfoPage> {
 
   @override
   Widget build(BuildContext context) {
-    var user = FirebaseAuth.instance;
-    user.authStateChanges();
+    var _user = FirebaseAuth.instance;
+    _user.authStateChanges();
     return Scaffold(
       body: StreamBuilder<DocumentSnapshot>(
         stream: _snapshots
             .collection('usuarios')
-            .doc(user.currentUser.uid)
+            .doc(_user.currentUser.uid)
             .snapshots(),
         builder:
             (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
@@ -89,13 +104,14 @@ class _InfoPageState extends State<InfoPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         TextFormField(
-                          initialValue: item['nome'],
+                          initialValue: item['nome'].toString().toUpperCase(),
                           maxLength: 50,
                           keyboardType: TextInputType.name,
                           decoration: InputDecoration(
                               labelText: 'Nome:', border: OutlineInputBorder()),
                           textInputAction: TextInputAction.next,
                           onSaved: (value) => _formData['nome'] = value,
+                          enabled: disable,
                           validator: (value) {
                             if (value.isEmpty) {
                               return 'Campo obrigatório';
@@ -108,7 +124,7 @@ class _InfoPageState extends State<InfoPage> {
                           },
                         ),
                         TextFormField(
-                          initialValue: item['email'],
+                          initialValue: item['email'].toString().toUpperCase(),
                           maxLength: 30,
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
@@ -134,6 +150,7 @@ class _InfoPageState extends State<InfoPage> {
                                 textInputAction: TextInputAction.next,
                                 onSaved: (value) =>
                                     _formData['datadenascimento'] = value,
+                                enabled: disable,
                                 validator: (value) {
                                   if (value.isEmpty) {
                                     return 'Campo obrigatório';
@@ -153,17 +170,19 @@ class _InfoPageState extends State<InfoPage> {
                               height: 70,
                               width: 150,
                               child: TextFormField(
-                                initialValue: item['profissao'],
+                                initialValue:
+                                    item['profissao'].toString().toUpperCase(),
                                 maxLength: 15,
                                 autocorrect: true,
                                 keyboardType: TextInputType.name,
                                 decoration: InputDecoration(
-                                  labelText: 'Profissão:',
+                                  labelText: 'Setor:',
                                   border: OutlineInputBorder(),
                                 ),
                                 textInputAction: TextInputAction.next,
                                 onSaved: (value) =>
                                     _formData['profissao'] = value,
+                                enabled: disable,
                                 validator: (value) {
                                   if (value.isEmpty) {
                                     return 'Campo obrigatório';
@@ -199,7 +218,8 @@ class _InfoPageState extends State<InfoPage> {
                               width: 150,
                               height: 70,
                               child: TextFormField(
-                                initialValue: item['sexo'],
+                                initialValue:
+                                    item['sexo'].toString().toUpperCase(),
                                 maxLength: 10,
                                 keyboardType: TextInputType.name,
                                 decoration: InputDecoration(
@@ -208,6 +228,7 @@ class _InfoPageState extends State<InfoPage> {
                                 ),
                                 textInputAction: TextInputAction.next,
                                 onSaved: (value) => _formData['sexo'] = value,
+                                enabled: disable,
                                 validator: (value) {
                                   if (value.isEmpty) {
                                     return 'Campo obrigatório';
@@ -225,7 +246,8 @@ class _InfoPageState extends State<InfoPage> {
                           width: double.infinity,
                           height: 70,
                           child: TextFormField(
-                            initialValue: item['endereco'],
+                            initialValue:
+                                item['endereco'].toString().toUpperCase(),
                             maxLength: 30,
                             keyboardType: TextInputType.name,
                             decoration: InputDecoration(
@@ -326,7 +348,6 @@ class _InfoPageState extends State<InfoPage> {
                           padding: const EdgeInsets.only(
                               top: 20, left: 20, right: 30),
                           child: Row(
-                            // crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               if (_saveEditing == Save_Editing.Save)
