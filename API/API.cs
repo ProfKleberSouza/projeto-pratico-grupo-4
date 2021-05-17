@@ -26,7 +26,7 @@ namespace API
             User user = new User();
             user.profissao = req.Query["profissao"];
             string dateString = req.Query["datadenascimento"];
-            user.datadenascimento = DateTime.ParseExact(dateString, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+            user.datadenascimento = DateTime.ParseExact(dateString, "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
             UserBussiness.getUserPriorizationGroup(user);
             Prioridade data = new Prioridade {
                 prioridade = user.prioridade
