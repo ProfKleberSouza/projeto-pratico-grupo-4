@@ -14,4 +14,6 @@ Utilizamos tambem o serviço da Azure, Azure Functions (API), que está sendo ut
 
 ## Arquitetura da solução
 
+![Estrutura](img/Estrutura.png)
+
 ![Wireframes](img/Wireframes.png)
