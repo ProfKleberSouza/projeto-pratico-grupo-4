@@ -1,4 +1,8 @@
+import 'package:fila_vacinacao_1_1/pages/login_page.dart';
+import 'package:fila_vacinacao_1_1/provider/users_shared_pre.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
+
 import '../models/user.dart';
 
 class Auth {
@@ -10,22 +14,21 @@ class Auth {
         .map((user) => (user != null) ? UserModel(id: user.uid) : null);
   }
 
-  String get currenteUserUid {
-    return _auth.currentUser.uid;
-  }
-
   Future<String> singIn(String email, String password) async {
     try {
-      UserCredential user = await _auth.signInWithEmailAndPassword(
-          email: email, password: password);
-    } catch (e) {
-      print('Error $e');
+      await _auth.signInWithEmailAndPassword(email: email, password: password);
+    } on FirebaseAuthException catch (e) {
+      return e.code;
     }
+    return null;
   }
 
   Future<void> singOut() {
+    Users().clearUser();
+
     try {
       _auth.signOut();
+      LoginPage();
     } catch (e) {
       print('Error $e');
     }

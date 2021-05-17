@@ -1,7 +1,5 @@
 import '../pages/info_page.dart';
-
 import '../pages/status_page.dart';
-
 import 'package:flutter/material.dart';
 import '../pages/settings_page.dart';
 
@@ -14,12 +12,11 @@ class _WidgetTabState extends State<WidgetTab> {
   int _selectScreenIndex = 0;
   final List<Map<String, Object>> _screens = [
     {
-      'title': 'Agendamentos',
+      'title': 'Status Agendamentos',
       'screen': StatusPage(),
     },
     {
       'title': 'Informações do usuário',
-      //'screen': InfoUserPage(),
       'screen': InfoPage(),
     },
     {
@@ -37,7 +34,6 @@ class _WidgetTabState extends State<WidgetTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.deepPurple[50],
       appBar: AppBar(
         title: Text(_screens[_selectScreenIndex]['title']),
       ),
