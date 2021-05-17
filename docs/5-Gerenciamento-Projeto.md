@@ -16,7 +16,11 @@ Foi utilizado a própria ferramenta de gestão de projetos do Github com as segu
 - In progress: Funcionalidades em desenvolvimento
 - In review: Funcionalidades em teste e revisão
 - Done: Funcionalidades concluídas
-[![Github Kanban](img/Board.jpg)]
+
+#### Github Board
+![Github Kanban](img/Board.png)
+![Sprint](img/Sprint.png)
+![Sprint](img/Sprint 2.png)
 ## Ferramentas
 
 As ferramentas empregadas no projeto são:
