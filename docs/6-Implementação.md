@@ -3,24 +3,16 @@
 <span style="color:red">Pré-requisitos: <a href="4-Gestão-Configuração.md"> Ambiente e Ferramentas de Trabalho</a></span>
 
 ## Tecnologias Utilizadas
+Para nossa solução foi utilizadas varias tecnologias para obtermos o resultado final esperado, como banco de dados armazenados na nuvem, telas intuitivas, sistema de login , entre outros.
 
-> Descreva aqui qual(is) tecnologias você vai usar para resolver o seu
-> problema, ou seja, implementar a sua solução. Liste todas as
-> tecnologias envolvidas, linguagens a serem utilizadas, serviços web,
-> frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
-> Apresente também uma figura explicando como as tecnologias estão
-> relacionadas ou como uma interação do usuário com o sistema vai ser
-> conduzida, por onde ela passa até retornar uma resposta ao usuário.
-> 
-> Inclua os diagramas de User Flow, esboços criados pelo grupo
-> (stoyboards), além dos protótipos de telas (wireframes). Descreva cada
-> item textualmente comentando e complementando o que está apresentado
-> nas imagens.
+Para desenvolver o aplicativo e todo sem esquema de telas, utilizamos Flutter, que é um kit de desenvolvimento de interface de usuário baseado na linguagem Dart.
+
+Para armazenamento de dados de usuarios, utilizamos o serviço da Google, FireBase. No firebase, armazenamos não só os dados de usuarios, mas tambem todos os outros, como, datas disponíveis para agendamento e dados de vacinas.
+
+Utilizamos tambem o serviço de API da Azure, que está sendo utilizado como backend da aplicação. Utilizamos ele para executar tarefas fora da aplicação.
+
 
 ## Arquitetura da solução
-
-> Inclua um diagrama da solução e descreva os módulos e as tecnologias
-> que fazem parte da solução. Discorra sobre o diagrama.
 
 A imagem a seguir ilustra a o fluxo do usuário em nossa solução. Assim
 que o usuário entra na plataforma, ele é apresentado à tela inicial
@@ -46,4 +38,4 @@ escolher salvar ou deletar o post. Em ambos os casos o status é
 notificado para o usuário (Tela 8) e em seguida ele é redirecionado
 para a Tela 2.
 
-![Exemplo de UserFlow](img/userflow.jpg)
+![Wireframes](img/Wireframes.png)
