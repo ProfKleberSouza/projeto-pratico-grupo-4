@@ -1,43 +1,36 @@
 # Gerenciamento de Projeto
 
-> Descreva aqui a metodologia de trabalho do grupo para atacar o
-> problema.
+O grupo utiliza metodologia do Scrum para gestão do projeto, buscando entregas com agilidade e qualidade.
 
 ## Divisão de Papéis
 
-> Apresente a divisão de papéis entre os membros do grupo.
->
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu 
-> Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
+- Ian Rafael De Souza Oliveira: Desenvolvedor
+- Pedro Augusto Vaz De Souza E Silva: Desenvolvedor
+- Pedro Henrique Ramos Loura: Desenvolvedor
 
 ## Processo
 
-> Coloque  informações sobre detalhes da implementação do Scrum seguido
-> pelo grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar
-> o andamento do projeto, a execução das tarefas e o status de desenvolvimento
-> da solução.
-> 
-> **Links Úteis**:
-> - [Tutorial Trello](https://trello.com/b/8AygzjUA/tutorial-trello)
-> - [Gestão ágil de projetos com o Trello](https://www.youtube.com/watch?v=1o9BOMAKBRE)
-> - [Gerência de projetos - Trello com Scrum](https://www.youtube.com/watch?v=DHLA8X_ujwo)
-> - [Tutorial Slack](https://slack.com/intl/en-br/)
-
+Foi utilizado a própria ferramenta de gestão de projetos do Github com as seguintes configurações:
+- To do: Funcionalidades que devem ser desenvolvidos durante a sprint
+- Bug: Falha ou erro no código de uma funcionalidade
+- In progress: Funcionalidades em desenvolvimento
+- In review: Funcionalidades em teste e revisão
+- Done: Funcionalidades concluídas
+[![Github Kanban](img/Board.jpg)]
 ## Ferramentas
 
 As ferramentas empregadas no projeto são:
 
-- Editor de código.
-- Ferramentas de comunicação
-- Ferramentas de diagramação
+- VSCode
+- Microsoft Teams
+- Figma
+- Firebase
+- Azure Functions (API)
+- GitHub
 
-O editor de código foi escolhido porque ele possui uma integração com o
-sistema de versão. As ferramentas de comunicação utilizadas possuem
-integração semelhante e por isso foram selecionadas. Por fim, para criar
-diagramas utilizamos essa ferramenta por melhor captar as
-necessidades da nossa solução.
+O editor de código (VSCode) foi escolhido porque ele possui uma integração com o
+sistema de versão (GitHub) e integração com o Azure Functions, possibilitando desenvolvimento e deploy ágil. As ferramentas de comunicação utilizadas possuem
+integração semelhante e por isso foram selecionadas. Por fim, para criar diagramas utilizamos o Figma por melhor captar as necessidades da nossa solução.
 
 > Liste quais ferramentas foram empregadas no desenvolvimento do
 > projeto, justificando a escolha delas, sempre que possível.
