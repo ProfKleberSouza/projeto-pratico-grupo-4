@@ -43,7 +43,8 @@ namespace API.Business
         private static bool healthArea(string profissao)
         {
             bool healthArea = false;
-            if (profissao == "Médico" || profissao == "Médica" || profissao == "Enfermeiro" || profissao == "Enfermeira")
+            profissao = profissao.ToLower();
+            if (profissao == "saude" || profissao == "seguranca")
             {
                 healthArea = true;
             }
