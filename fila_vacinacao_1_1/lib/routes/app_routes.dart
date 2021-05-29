@@ -5,4 +5,6 @@ class AppRoutes {
   static const INFO_PAGE = '/ info_page';
   static const AGENDAMENTO_PAGE = '/agendamento_page';
   static const STATUS_PAGE = '/status_page';
+  static const SOBRE_PAGE = '/sobre_page';
+  static const ACESS_PAGE = '/acess_page';
 }

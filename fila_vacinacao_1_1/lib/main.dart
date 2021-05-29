@@ -1,6 +1,9 @@
 import 'package:fila_vacinacao_1_1/models/user.dart';
+import 'package:fila_vacinacao_1_1/pages/acessibilidade_page.dart';
 import 'package:fila_vacinacao_1_1/pages/agendamentos_page.dart';
+import 'package:fila_vacinacao_1_1/pages/sobre_page.dart';
 import 'package:fila_vacinacao_1_1/pages/status_page.dart';
+
 import 'package:fila_vacinacao_1_1/widgets/root.dart';
 import '../services/auth.dart';
 
@@ -39,6 +42,8 @@ class MyApp extends StatelessWidget {
           AppRoutes.INFO_PAGE: (_) => InfoPage(),
           AppRoutes.AGENDAMENTO_PAGE: (_) => AgendamentoPage(),
           AppRoutes.STATUS_PAGE: (_) => StatusPage(),
+          AppRoutes.SOBRE_PAGE: (_) => SobrePage(),
+          AppRoutes.ACESS_PAGE: (_) => AcessPage(),
         },
       ),
     );

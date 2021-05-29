@@ -1,12 +1,9 @@
-import 'package:fila_vacinacao_1_1/pages/status_page.dart';
-
 class UserModel {
   String id;
   String nome;
   String email;
   String sexo;
   String datadenascimento;
-  String profissao;
   String cpf;
   String endereco;
   String numero;
@@ -18,6 +15,7 @@ class UserModel {
   String dataAgendadaSegundaDose;
   String dataAgendadaPrimeiraDose;
   String setor;
+  String prioridade;
 
   UserModel(
       {this.id,
@@ -25,17 +23,18 @@ class UserModel {
       this.email,
       this.sexo,
       this.datadenascimento,
-      this.profissao,
+      this.setor,
       this.cpf,
       this.endereco,
       this.numero,
       this.cep,
       this.fone,
-      this.agendado = false,
+      this.agendado,
       this.primeiraAplicacao,
       this.segundaAplicacao,
       this.dataAgendadaSegundaDose,
-      this.dataAgendadaPrimeiraDose});
+      this.dataAgendadaPrimeiraDose,
+      this.prioridade});
 
   UserModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -43,7 +42,7 @@ class UserModel {
     email = json['email'];
     sexo = json['sexo'];
     datadenascimento = json['datadenascimento'];
-    profissao = json['profissao'];
+    setor = json['setor'];
     cpf = json['cpf'];
     endereco = json['endereco'];
     numero = json['numero'];
@@ -54,6 +53,7 @@ class UserModel {
     segundaAplicacao = json['segundaAplicacao'];
     dataAgendadaSegundaDose = json['dataAgendadaSegundaDose'];
     dataAgendadaPrimeiraDose = json['dataAgendadaPrimeiraDose'];
+    prioridade = json['prioridade'];
   }
 
   Map<String, dynamic> toJson() {
@@ -63,7 +63,7 @@ class UserModel {
     data['email'] = this.email;
     data['sexo'] = this.sexo;
     data['datadenascimento'] = this.datadenascimento;
-    data['profissao'] = this.profissao;
+    data['setor'] = this.setor;
     data['cpf'] = this.cpf;
     data['endereco'] = this.endereco;
     data['numero'] = this.numero;
@@ -74,6 +74,7 @@ class UserModel {
     data['segundaAplicacao'] = this.segundaAplicacao;
     data['dataAgendadaSegundaDose'] = this.dataAgendadaSegundaDose;
     data['dataAgendadaPrimeiraDose'] = this.dataAgendadaPrimeiraDose;
+    data['prioridade'] = this.prioridade;
     return data;
   }
 }

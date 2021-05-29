@@ -1,4 +1,3 @@
-import 'package:fila_vacinacao_1_1/pages/login_page.dart';
 import 'package:fila_vacinacao_1_1/provider/users_shared_pre.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -25,10 +24,8 @@ class Auth {
 
   Future<void> singOut() {
     Users().clearUser();
-
     try {
       _auth.signOut();
-      LoginPage();
     } catch (e) {
       print('Error $e');
     }

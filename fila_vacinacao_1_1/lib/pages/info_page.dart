@@ -13,27 +13,21 @@ class InfoPage extends StatefulWidget {
 
 class _InfoPageState extends State<InfoPage> {
   final GlobalKey<FormState> _formKeyInfoPage = GlobalKey<FormState>();
-  UserModel user;
+
   Save_Editing _saveEditing = Save_Editing.Editing;
   Map<String, String> _formData = {};
   var _snapshots = FirebaseFirestore.instance;
   bool disable = true;
 
-  void updateUser(UserModel user) {
+  void updateUser() async {
+    UserModel user;
+    user = await Users().getuser();
     user.nome = _formData['nome'];
     user.numero = _formData['numero'];
     user.endereco = _formData['endereco'];
     user.cep = _formData['cep'];
     user.fone = _formData['fone'];
     Users().saveUser(user);
-  }
-
-  void teste() async {
-    print("Entrou teste");
-    UserModel userteste = UserModel(nome: "Teste", cpf: '123456789');
-    Users().saveUser(userteste);
-    UserModel userAux = await Users().getuser();
-    print(userAux.nome);
   }
 
   void updateData() {
@@ -50,14 +44,14 @@ class _InfoPageState extends State<InfoPage> {
   void _switchMode() async {
     final isValid = _formKeyInfoPage.currentState.validate();
     if (_saveEditing == Save_Editing.Save) {
+      if (isValid) {
+        _formKeyInfoPage.currentState.save();
+        updateUser();
+        updateData();
+        disable = true;
+      }
       setState(() {
-        if (isValid) {
-          _formKeyInfoPage.currentState.save();
-          updateData();
-          updateUser(user);
-          disable = true;
-          _saveEditing = Save_Editing.Editing;
-        }
+        _saveEditing = Save_Editing.Editing;
       });
     } else {
       setState(() {
@@ -70,6 +64,7 @@ class _InfoPageState extends State<InfoPage> {
   @override
   Widget build(BuildContext context) {
     var _user = FirebaseAuth.instance;
+
     _user.authStateChanges();
     return Scaffold(
       body: StreamBuilder<DocumentSnapshot>(
@@ -171,7 +166,7 @@ class _InfoPageState extends State<InfoPage> {
                               width: 150,
                               child: TextFormField(
                                 initialValue:
-                                    item['profissao'].toString().toUpperCase(),
+                                    item['setor'].toString().toUpperCase(),
                                 maxLength: 15,
                                 autocorrect: true,
                                 keyboardType: TextInputType.name,
@@ -180,8 +175,7 @@ class _InfoPageState extends State<InfoPage> {
                                   border: OutlineInputBorder(),
                                 ),
                                 textInputAction: TextInputAction.next,
-                                onSaved: (value) =>
-                                    _formData['profissao'] = value,
+                                onSaved: (value) => _formData['setor'] = value,
                                 enabled: disable,
                                 validator: (value) {
                                   if (value.isEmpty) {
@@ -366,13 +360,12 @@ class _InfoPageState extends State<InfoPage> {
                                         borderRadius:
                                             BorderRadius.circular(50)),
                                     child: IconButton(
-                                      icon: Icon(
-                                        Icons.save,
-                                        size: 60,
-                                        color: Colors.white,
-                                      ),
-                                      onPressed: _switchMode,
-                                    ),
+                                        icon: Icon(
+                                          Icons.save,
+                                          size: 60,
+                                          color: Colors.white,
+                                        ),
+                                        onPressed: _switchMode),
                                   ),
                                 ),
                               if (_saveEditing == Save_Editing.Editing)
