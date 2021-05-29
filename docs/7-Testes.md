@@ -3,9 +3,15 @@
 <span style="color:red">Pré-requisitos: <a href="6-Implementação.md"> Projeto da Solução</a></span>
 
 
-> Apresente os cenários de testes utilizados na realização dos testes da
-> sua aplicação. Escolha cenários de testes que demonstrem os requisitos
-> sendo satisfeitos.
+Os testes serão realizados nas seguintes telas e funcionalidades:
+
+- Login;
+- Tela de agendamento;
+- Confirmar agendamento;
+- Tela de configuração;
+- Tela de Editar usuário;
+- Seleção de Data/Hora;
+- Frame de Confirmado.
 
 ## Plano de Testes
 
