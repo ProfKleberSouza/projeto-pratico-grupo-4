@@ -36,15 +36,13 @@ Os testes serão realizados nas seguintes telas e funcionalidades:
 
 E a cada funcionalidade implementada foi feito o Teste de Regressão
 
-### FLuxo dos testes
+### Fluxo dos testes
 ![Estrutura](img/FluxogramaTestes.jpg)
 
-## Ferramentas de Testes (Opcional)
+## Ferramentas de Testes
 
-> Comente sobre as ferramentas de testes utilizadas.
-> 
-> **Links Úteis**:
-> - [Ferramentas de Test para Flutter](https://flutter.dev/docs/testing)
+Comente sobre as ferramentas de testes utilizadas.
+- [Ferramentas de Test para Flutter](https://flutter.dev/docs/testing)
 
 ## Avaliação
 
