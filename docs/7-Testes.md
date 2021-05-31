@@ -3,29 +3,48 @@
 <span style="color:red">Pré-requisitos: <a href="6-Implementação.md"> Projeto da Solução</a></span>
 
 
-> Apresente os cenários de testes utilizados na realização dos testes da
-> sua aplicação. Escolha cenários de testes que demonstrem os requisitos
-> sendo satisfeitos.
+Os testes serão realizados nas seguintes telas e funcionalidades:
+
+- Login;
+- Tela de agendamento;
+- Confirmar agendamento;
+- Tela de configuração;
+- Tela de Editar usuário;
+- Seleção de Data/Hora;
+- Frame de Confirmado;
 
 ## Plano de Testes
+### Tipos de testes aplicado
+- Teste de regressão: Esse consiste em realizar testes a cada versão de um software, onde se modificam-se funcionalidades. Desse modo, evita-se que erros que foram corrigidos antes no software antes voltem a aparecer na hora de se incrementar algo novo a ele.
 
-> Enumere quais cenários de testes foram selecionados para teste. Neste
-> tópico o grupo deve detalhar quais funcionalidades avaliadas, o grupo
-> de usuários que foi escolhido para participar do teste e as
-> ferramentas utilizadas.
-> 
-> **Links Úteis**:
-> - [IBM - Criação e Geração de Planos de Teste](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Práticas e Técnicas de Testes Ágeis](http://assiste.serpro.gov.br/serproagil/Apresenta/slides.pdf)
-> -  [Teste de Software: Conceitos e tipos de testes](https://blog.onedaytesting.com.br/teste-de-software/)
+- Teste de unidade: Testa-se unidades menores de um software, de modo isolado, para ver se todas funcionam adequadamente;
+
+- Teste de integração: Depois das unidades testadas, realiza-se uma verificação se elas funcionam juntas, integradas. Pode ocorrer delas apresentarem incompatibilidades ao funcionarem em conjunto, mesmo após terem sido aprovadas no teste de unidade;
+
+- Teste de usabilidade: Esse teste é feito por um pequeno grupo de usuários para ver se o software satisfaz as suas necessidades.  Nesse teste analisa-se como o usuário usa o sistema, verificando onde ele tem mais dificuldade. Ouve-se também suas impressões, porém é preciso confrontá-las com as observações do avaliador;
+
+### Funcionalidades testadas:
+| Tela/Funcionalidade | Testes |
+|-------------------------|-----------------------------|
+| Login | Teste de unidade, Teste de integração |
+| Tela de agendamento | Teste de unidade, Teste de usabilidade |
+| Confirmar agendamento | Teste de unidade, Teste de integração |
+| Tela de configuração | Teste de unidade, Teste de usabilidade |
+| Tela de Editar usuário | Teste de unidade, Teste de integração |
+| Seleção de Data/Hora | Teste de unidade, Teste de integração |
+| Frame de Confirmação | Teste de unidade, Teste de integração |
+
+E a cada funcionalidade implementada foi feito o Teste de Regressão
+
+### FLuxo dos testes
+![Estrutura](img/FluxogramaTestes.jpg)
 
 ## Ferramentas de Testes (Opcional)
 
 > Comente sobre as ferramentas de testes utilizadas.
 > 
 > **Links Úteis**:
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
-> - [UX Tools](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
+> - [Ferramentas de Test para Flutter](https://flutter.dev/docs/testing)
 
 ## Avaliação
 
