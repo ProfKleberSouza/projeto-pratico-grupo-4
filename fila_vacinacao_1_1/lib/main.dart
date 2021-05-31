@@ -33,7 +33,6 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        darkTheme: ThemeData(brightness: Brightness.dark),
         debugShowCheckedModeBanner: false,
         routes: {
           AppRoutes.ROOT_PAGE: (_) => Root(),

@@ -21,9 +21,8 @@ class _StatusPageState extends State<StatusPage> {
   FontModel font;
   void loadUser() async {
     user = await Users().getuser();
-    setState(() {
-      _streamControler.add(user);
-    });
+
+    _streamControler.sink.add(user);
   }
 
   void loadFont() async {
@@ -122,8 +121,8 @@ class _StatusPageState extends State<StatusPage> {
 
   @override
   void initState() {
-    super.initState();
     loadUser();
+    super.initState();
   }
 
   @override

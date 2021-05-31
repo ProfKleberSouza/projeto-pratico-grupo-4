@@ -28,8 +28,9 @@ class _StartPageState extends State<StartPage> {
         "profissao=${userTemp.setor}&datadenascimento=${userTemp.datadenascimento}");
     final response = await http.get(uri);
     if (response.body.isNotEmpty) {
-      userTemp.prioridade = json.decode(response.body);
+      userTemp.prioridade = json.decode(response.body).toString();
       updateData();
+      print('PRIORIDADE');
       print(userTemp.prioridade);
     }
   }
@@ -44,13 +45,8 @@ class _StartPageState extends State<StartPage> {
   }
 
   @override
-  void initState() {
-    //prioridade();
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    prioridade();
     return Scaffold(
       body: StreamBuilder<DocumentSnapshot>(
           stream: _snapshots

@@ -2,7 +2,9 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fila_vacinacao_1_1/models/font.dart';
+import 'package:fila_vacinacao_1_1/pages/settings_page.dart';
 import 'package:fila_vacinacao_1_1/provider/acess_shared_pre.dart';
+import 'package:fila_vacinacao_1_1/routes/app_routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +21,7 @@ class _AcessPageState extends State<AcessPage> {
   FontModel font;
   void loadFont() async {
     font = await Acessibilidade().getFontModel();
+
     _streamControllerAcess.add(font);
   }
 
@@ -45,6 +48,7 @@ class _AcessPageState extends State<AcessPage> {
   @override
   void initState() {
     loadFont();
+
     super.initState();
   }
 
@@ -83,7 +87,6 @@ class _AcessPageState extends State<AcessPage> {
                     onChanged: (SelectSizeFont value) {
                       setState(() {
                         _selectSizeFont = value;
-                        print(_selectSizeFont);
                       });
                     },
                     groupValue: _selectSizeFont,
@@ -102,7 +105,6 @@ class _AcessPageState extends State<AcessPage> {
                     onChanged: (SelectSizeFont value) {
                       setState(() {
                         _selectSizeFont = value;
-                        print(_selectSizeFont);
                       });
                     },
                     groupValue: _selectSizeFont,
@@ -121,7 +123,6 @@ class _AcessPageState extends State<AcessPage> {
                     onChanged: (SelectSizeFont value) {
                       setState(() {
                         _selectSizeFont = value;
-                        print(_selectSizeFont);
                       });
                     },
                     groupValue: _selectSizeFont,
@@ -137,9 +138,12 @@ class _AcessPageState extends State<AcessPage> {
                       onPressed: () {
                         setState(() {
                           fontSize(_selectSizeFont);
-                          print(font.tamfonte);
                         });
-                        Navigator.of(context).pop();
+                        setState(() {
+                          AcessPage();
+                        });
+                        Navigator.of(context)
+                            .popAndPushNamed(AppRoutes.WIDGET_TAB);
                       },
                       child: Text(
                         'Confirmar',

@@ -12,6 +12,7 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPageState extends State<SettingsPage> {
   FontModel font;
+
   loadFont() async {
     font = await Acessibilidade().getFontModel();
   }
