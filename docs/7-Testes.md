@@ -36,6 +36,9 @@ Os testes serão realizados nas seguintes telas e funcionalidades:
 
 E a cada funcionalidade implementada foi feito o Teste de Regressão
 
+### FLuxo dos testes
+![Estrutura](img/FluxogramaTestes.jpg)
+
 ## Ferramentas de Testes (Opcional)
 
 > Comente sobre as ferramentas de testes utilizadas.
