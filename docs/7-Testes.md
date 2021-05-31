@@ -24,13 +24,15 @@ Os testes serão realizados nas seguintes telas e funcionalidades:
 - Teste de usabilidade: Esse teste é feito por um pequeno grupo de usuários para ver se o software satisfaz as suas necessidades.  Nesse teste analisa-se como o usuário usa o sistema, verificando onde ele tem mais dificuldade. Ouve-se também suas impressões, porém é preciso confrontá-las com as observações do avaliador;
 
 ### Funcionalidades testadas:
-- Login: Teste de unidade, Teste de integração
-- Tela de agendamento: Teste de unidade, Teste de usabilidade
-- Confirmar agendamento: Teste de unidade, Teste de integração
-- Tela de configuração: Teste de unidade, Teste de usabilidade
-- Tela de Editar usuário: Teste de unidade, Teste de integração
-- Seleção de Data/Hora: Teste de unidade, Teste de integração
-- Frame de Confirmação: Teste de unidade, Teste de integração
+| Tela/Funcionalidade | Testes |
+|-------------------------|-----------------------------|
+| Login | Teste de unidade, Teste de integração |
+| Tela de agendamento | Teste de unidade, Teste de usabilidade |
+| Confirmar agendamento | Teste de unidade, Teste de integração |
+| Tela de configuração | Teste de unidade, Teste de usabilidade |
+| Tela de Editar usuário | Teste de unidade, Teste de integração |
+| Seleção de Data/Hora | Teste de unidade, Teste de integração |
+| Frame de Confirmação | Teste de unidade, Teste de integração |
 
 E a cada funcionalidade implementada foi feito o Teste de Regressão
 
