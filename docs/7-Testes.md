@@ -44,8 +44,7 @@ E a cada funcionalidade implementada foi feito o Teste de Regressão
 > Comente sobre as ferramentas de testes utilizadas.
 > 
 > **Links Úteis**:
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
-> - [UX Tools](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
+> - [Ferramentas de Test para Flutter](https://flutter.dev/docs/testing)
 
 ## Avaliação
 
