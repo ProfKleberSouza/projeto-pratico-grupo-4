@@ -71,7 +71,7 @@ O objetivo dos testes, é garantir que o usuário final tenha uma boa experienci
 
 Para isso, disponibilizaremos um formulario para quem for fazer o teste do nosso aplicativo:
 
-| Telas | Teve problemas? | Obvervação | 
+| Telas | Teve problemas | Obvervações | 
 |---------------------|---------------------|---------------------|
 | Login |   |   |
 | Agendamento |  |   |
