@@ -42,13 +42,6 @@ E a cada funcionalidade implementada foi feito o Teste de Regressão
 ### Fluxo dos testes
 ![Estrutura](img/FluxogramaTestes.jpg)
 
-## Ferramentas de Testes Unitário
-
-- ### [Ferramentas de Test para Flutter](https://flutter.dev/docs/testing)
-- O teste de unidade testa uma única função, método ou classe.
-- O teste de widget (em outras estruturas de IU chamadas de teste de componente ) testa um único widget.
-- O teste de integração testa um aplicativo completo ou uma grande parte de um aplicativo.
-
 ## Avaliação
 
 | Funcionalidade | Teste de unidade | Teste de integração | Teste de regressão | Teste de usabilidade |
