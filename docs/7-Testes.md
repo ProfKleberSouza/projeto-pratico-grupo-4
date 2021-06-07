@@ -58,11 +58,11 @@ E a cada funcionalidade implementada foi feito o Teste de Regressão
 
 ## Plano de teste de Usabilidade
 
-Para a realização dos testes de usabilidade, será necessário apresentar nosso aplicativo para pessoas que englobam nosso publico alvo, que vai desde jovens a pessoas de idade avançada.
+Para a realização dos testes de usabilidade, será necessário apresentar nosso aplicativo para pessoas que englobam nosso público alvo, que vai desde jovens a pessoas de idade avançada.
 
-O objetivo dos testes, é garantir que o usuário final tenha uma boa experiencia com o aplicativo e que não tenha difilcudades em navegar pelo software.
+O objetivo dos testes, é garantir que o usuário final tenha uma boa experiencia com o aplicativo e que não tenha dificudades em navegar pelo software.
 
-Para isso, disponibilizaremos um formulario para quem for fazer o teste do nosso aplicativo:
+Para isso, disponibilizaremos um formulário para quem for fazer o teste do nosso aplicativo:
 
 | Telas | Teve problemas | Obvervações | 
 |---------------------|---------------------|---------------------|
