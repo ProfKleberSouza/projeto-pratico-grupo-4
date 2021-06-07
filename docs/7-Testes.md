@@ -42,7 +42,7 @@ E a cada funcionalidade implementada foi feito o Teste de Regressão
 ### Fluxo dos testes
 ![Estrutura](img/FluxogramaTestes.jpg)
 
-## Ferramentas de Testes
+## Ferramentas de Testes Unitário
 
 - ### [Ferramentas de Test para Flutter](https://flutter.dev/docs/testing)
 - O teste de unidade testa uma única função, método ou classe.
@@ -63,5 +63,16 @@ E a cada funcionalidade implementada foi feito o Teste de Regressão
 | Frame de Confirmação | :heavy_check_mark: OK | :heavy_check_mark: OK | :heavy_check_mark: OK | 
 | Logout | :heavy_check_mark: OK | :heavy_check_mark: OK | :heavy_check_mark: OK |  :heavy_check_mark: OK | 
 
+## Plano de teste de Usabilidade
 
+Para a realização dos testes de usabilidade, será necessário apresentar nosso aplicativo para pessoas que englobam nosso publico alvo, que vai desde jovens a pessoas de idade avançada.
+O objetivo dos testes, é garantir que o usuário final tenha uma boa experiencia com o aplicativo e que não tenha difilcudades em navegar pelo software.
+Para isso, disponibilizaremos um formulario para quem for fazer o teste do nosso aplicativo:
 
+| Telas | Teve problemas? | Obvervação | 
+|---------------------|---------------------|---------------------|
+| Login |   |   |
+| Agendamento |  |   |
+| Inicial |   |   |
+| Configuração |   |   |
+| Dados de usuário |  |   |
