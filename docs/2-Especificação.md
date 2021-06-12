@@ -1,54 +1,29 @@
 # Especificações Do Projeto
 
-<span style="color:red">Pré-requisitos: <a href="1-Contexto.md"> Documentação de Contexto</a></span>
-
-> Apresente uma visão geral do que será abordado nesta parte do
-> documento, enumerando as técnicas e/ou ferramentas utilizadas para
-> realizar a especificações do projeto
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em
-se desenvolver profissionalmente através de um mestrado fora do país,
-pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está
-buscando uma agência que o ajude a encontrar universidades na Europa
-que aceitem alunos estrangeiros.
+Pessoas apartir de 18 anos, que tem desejo de tomar vacina partindo de uma iniciativa privada.
 
+1-João tem 36 anos, sendo 10 anos como engenheiro civil trabalha em uma grande construtora vistoriando as obras em andamento em Belo Horizonte, está acima do peso e possui diabetes , pretende começar a realizar pequenas caminhadas depois do expediente para melhorar a qualidade de vida, para ter mais tempo para suas duas filhas e esposa, João está aguardando a liberação de vendas da vacina ja que e do grupo de risco e se preocupa com a saúde.
 
-> Enumere e detalhe as personas da sua solução. Para
-> tanto, baseie-se tanto nos documentos disponibilizados na disciplina
-> e/ou nos seguintes links:
->
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-> Lembre-se que você deve ser enumerar e descrever precisamente e
-> personalizada todos os clientes ideais que sua solução almeja.
+2-Joana uma senhora simpática de 65 anos aposentada, trabalhava como dentista em uma clínica popular atendendo crianças, nós fins de semana gosta de convocar os filhos e netos para um almoço em sua casa, adora dançar e festejar mas devido a asma se cansa rápido, com a pandemia ficou sem poder fazer as coisas que gostava, esta a procura de vacinas em clínicas privadas.
+
 
 ## Histórias de Usuários
 
-Com base na análise das personas forma identificadas as seguintes histórias de usuários:
+ A aplicação de uma vacina confere imunização ativa ou passiva ao indivíduo. Para que este processo se dê com segurança, 
+ as atividades de imunização devem ser cercadas de cuidados, adotando-se procedimentos adequados antes, durante e após a 
+ administração dos imunobiológicos. Como um usuário do aplicativo, é esperado o retorno das seguintes informações:
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
-
-> Apresente aqui as histórias de usuário que são relevantes para o
-> projeto de sua solução. As Histórias de Usuário consistem em uma
-> ferramenta poderosa para a compreensão e elicitação dos requisitos
-> funcionais e não funcionais da sua aplicação. Se possível, agrupe as
-> histórias de usuário por contexto, para facilitar consultas
-> recorrentes à essa parte do documento.
->
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
+|Persona    | Historia  | Motivo |
+|------|-----------------------------------------|----|
+| Usuario | Desejo me cadastrar no sistema | Fazer login e ter acesso a seus dados |
+| Usuario | Desejo fazer agendamento para tomar a vacina | Agendar um dia para tomar a vacina |
+| Usuario | Devo ter acesso ao meus dados| Ficar ciente dos seus dados/grupo de prioridade |
+| Usuario | O intervalo entre uma dose e outra | caso o imunobiológico cuja proteção exija mais de uma dose |
+| Usuario | Devo saber as marcas das vacinas | Ter ciencia de quais vacinas estão disponiveis |
+| Usuario | Ser informado do número de doses do esquema básico e dos reforços | Se tiver mais de uma dose, o paciente devera fazer um novo agendamento |
 
 ## Requisitos
 
@@ -58,48 +33,36 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+| RF-001 | Permitir login de usuário | Alta |
+| RF-002 | Definir grupo de prioridade do usuário | Alta |
+| RF-003 | Permitir agendamendo para usuários dentro do grupo prioritario | Alta |
+| RF-004 | Exibir grupo de prioridade do usuário | Média |
+| RF-005 | Permitir desmarcar agendamento | Média |
+| RF-006 | Notificar usuário caso agendamento disponivel para grupo prioritario | Baixa | 
+| RF-007 | Exibir data de agendamento | Média |
+| RF-008 | Permitir a escolha de dia e hora da consulta (dentro dos dias disponiveis para o grupo prioritario). | Média |
+| RF-009 | Exibir marcas de vacinas disponiveis | Baixa |
+| RF-010 | Exibir informaçoes da vacina a ser tomada | Baixa |
+
 
 
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
-
-> Com base nas Histórias de Usuário, enumere os requisitos da sua
-> solução. Classifique esses requisitos em dois grupos:
->
-> - [Requisitos Funcionais
->   (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
->   correspondem a uma funcionalidade que deve estar presente na
->   plataforma (ex: cadastro de usuário).
->
-> - [Requisitos Não Funcionais
->   (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
->   correspondem a uma característica técnica, seja de usabilidade,
->   desempenho, confiabilidade, segurança ou outro (ex: suporte a
->   dispositivos iOS e Android).
->
-> Lembre-se que cada requisito deve corresponder à uma e somente uma
-> característica alvo da sua solução. Além disso, certifique-se de que
-> todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+| RNF-001 | O sistema deve ser responsivo | Média |
+| RNF-002 |  O sistema deve ser acessivel | Média |
 
 ## Restrições
 
-O projeto está restrito pelos itens apresentados na tabela a seguir.
+As principais restrições da grande maioria dos projeto são: o prazo,  escopo (planejamento) e custos. E como não poderia ser diferente 
+aqui, os itens apresentados na tabela a seguir estão relacionados à isso, e eles impactam a forma como o projeto será gerenciado.
 
-|ID| Restrição                                             |
-|--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
-
-
-> Enumere as restrições à sua solução. Lembre-se de que as restrições
-> geralmente limitam a solução candidata.
-> 
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
+|ID| Restrição                                                                 |
+|--|---------------------------------------------------------------------------|
+|01| Cronograma: projeto divido em etapas com prazos de entrega pré definidos  |
+|02| Ferramentas de desenvolvimento do projeto são limitadas                   |
+|03| Custo ZERO: utilização de softwares livres para o desenvolvimento         |
+|04| A equipe de projeto será limitada ao máximo dos 4 alunos do grupo         |
+|05| Paradigmas e linguagens de programação determinadas pelo professor        |
+|06| Todos os dados serão disponibilizados pela clinica, como dados de usuários, datas e vacinas |

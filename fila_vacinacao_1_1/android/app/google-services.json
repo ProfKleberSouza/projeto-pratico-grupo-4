@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "267262032761",
+    "project_id": "fila-vac-1",
+    "storage_bucket": "fila-vac-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267262032761:android:b2f1a62c3b8420c9bfcda8",
+        "android_client_info": {
+          "package_name": "com.example.fila_vacinacao_1_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267262032761-lplhmaiivegbg5en40rs9tbnrphnhm7p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzOAKta7AMkhfs0hqfIBsT_Llx3OrtTcY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267262032761-lplhmaiivegbg5en40rs9tbnrphnhm7p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

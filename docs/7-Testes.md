@@ -3,33 +3,71 @@
 <span style="color:red">Pré-requisitos: <a href="6-Implementação.md"> Projeto da Solução</a></span>
 
 
-> Apresente os cenários de testes utilizados na realização dos testes da
-> sua aplicação. Escolha cenários de testes que demonstrem os requisitos
-> sendo satisfeitos.
+Os testes serão realizados nas seguintes telas e funcionalidades:
+
+- Login;
+- Tela de agendamento;
+- Confirmar agendamento;
+- Configuração da acessibilidade;
+- Configuração da notificação;
+- Tela de Editar usuário;
+- Seleção de Data/Hora;
+- Frame de Confirmado;
 
 ## Plano de Testes
+### Tipos de testes aplicado
+- Teste de regressão: Esse consiste em realizar testes a cada versão de um software, onde se modificam-se funcionalidades. Desse modo, evita-se que erros que foram corrigidos antes no software antes voltem a aparecer na hora de se incrementar algo novo a ele.
 
-> Enumere quais cenários de testes foram selecionados para teste. Neste
-> tópico o grupo deve detalhar quais funcionalidades avaliadas, o grupo
-> de usuários que foi escolhido para participar do teste e as
-> ferramentas utilizadas.
-> 
-> **Links Úteis**:
-> - [IBM - Criação e Geração de Planos de Teste](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Práticas e Técnicas de Testes Ágeis](http://assiste.serpro.gov.br/serproagil/Apresenta/slides.pdf)
-> -  [Teste de Software: Conceitos e tipos de testes](https://blog.onedaytesting.com.br/teste-de-software/)
+- Teste de unidade: Testa-se unidades menores de um software, de modo isolado, para ver se todas funcionam adequadamente;
 
-## Ferramentas de Testes (Opcional)
+- Teste de integração: Depois das unidades testadas, realiza-se uma verificação se elas funcionam juntas, integradas. Pode ocorrer delas apresentarem incompatibilidades ao funcionarem em conjunto, mesmo após terem sido aprovadas no teste de unidade;
 
-> Comente sobre as ferramentas de testes utilizadas.
-> 
-> **Links Úteis**:
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
-> - [UX Tools](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
+- Teste de usabilidade: Esse teste é feito por um pequeno grupo de usuários para ver se o software satisfaz as suas necessidades.  Nesse teste analisa-se como o usuário usa o sistema, verificando onde ele tem mais dificuldade. Ouve-se também suas impressões, porém é preciso confrontá-las com as observações do avaliador;
+
+### Funcionalidades testadas:
+| Tela/Funcionalidade | Testes |
+|-------------------------|-----------------------------|
+| Login | Teste de unidade, Teste de integração, Teste de usabilidade |
+| Tela de agendamento | Teste de unidade, Teste de integração, Teste de usabilidade |
+| Confirmar agendamento | Teste de unidade, Teste de integração |
+| Acessibilidade | Teste de unidade, Teste de integração, Teste de usabilidade |
+| Notificações | Teste de unidade, Teste de integração, Teste de usabilidade |
+| Tela de Editar usuário | Teste de unidade, Teste de integração, Teste de usabilidade |
+| Seleção de Data/Hora | Teste de unidade, Teste de integração |
+| Frame de Confirmação | Teste de unidade, Teste de integração |
+| Logout | Teste de unidade, Teste de integração, Teste de usabilidade |
+
+E a cada funcionalidade implementada foi feito o Teste de Regressão
+
+### Fluxo dos testes
+![Estrutura](img/FluxogramaTestes.jpg)
 
 ## Avaliação
 
-> Discorra sobre os resultados do teste. Ressaltando pontos fortes e
-> fracos identificados na solução. Comente como o grupo pretende atacar
-> esses pontos nas próximas iterações. Apresente as falhas detectadas e
-> as melhorias geradas a partir dos resultados obtidos nos testes.
+| Funcionalidade | Teste de unidade | Teste de integração | Teste de regressão | Teste de usabilidade |
+|---------------------|---------------------|---------------------|---------------------|---------------------|
+| Login | :heavy_check_mark: OK | :heavy_check_mark: OK | :heavy_check_mark: OK | :heavy_check_mark: OK | 
+| Tela de agendamento | :heavy_check_mark: OK | :x: NOK | :x: NOK | :heavy_check_mark: OK |
+| Confirmar agendamento | :heavy_check_mark: OK | :heavy_check_mark: OK | :heavy_check_mark: OK | 
+| Acessibilidade | :heavy_check_mark: OK | :heavy_check_mark: OK | :heavy_check_mark: OK | :heavy_check_mark: OK | 
+| Notificações | ❗ NOK | ❗ NOK | ❗ NOK | 
+| Tela de Editar usuário | :heavy_check_mark: OK | :heavy_check_mark: OK | :heavy_check_mark: OK | :heavy_check_mark: OK | 
+| Seleção de Data/Hora | :heavy_check_mark: OK | :x: NOK |  :x: NOK |
+| Frame de Confirmação | :heavy_check_mark: OK | :heavy_check_mark: OK | :heavy_check_mark: OK | 
+| Logout | :heavy_check_mark: OK | :heavy_check_mark: OK | :heavy_check_mark: OK |  :heavy_check_mark: OK | 
+
+## Plano de teste de Usabilidade
+
+Para a realização dos testes de usabilidade em um cenário aproximado do real, será necessário apresentar nosso aplicativo para pessoas que englobam nosso público alvo, que vai desde jovens a pessoas de idade avançada.
+
+O objetivo dos testes, é garantir que o usuário final tenha uma boa experiencia com o aplicativo e que não tenha dificudades em navegar pelo software.
+
+Para isso, disponibilizaremos um formulário para quem for fazer o teste do nosso aplicativo:
+
+| Telas | Teve problemas | Obvervações | 
+|---------------------|---------------------|---------------------|
+| Login |   |   |
+| Agendamento |  |   |
+| Inicial |   |   |
+| Configuração |   |   |
+| Dados de usuário |  |   |
