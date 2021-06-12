@@ -2,9 +2,7 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fila_vacinacao_1_1/models/font.dart';
-import 'package:fila_vacinacao_1_1/pages/settings_page.dart';
 import 'package:fila_vacinacao_1_1/provider/acess_shared_pre.dart';
-import 'package:fila_vacinacao_1_1/routes/app_routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -128,6 +126,7 @@ class _AcessPageState extends State<AcessPage> {
                     groupValue: _selectSizeFont,
                   ),
                 ),
+                ListTile(),
                 Divider(
                   height: 50,
                 ),
@@ -139,11 +138,7 @@ class _AcessPageState extends State<AcessPage> {
                         setState(() {
                           fontSize(_selectSizeFont);
                         });
-                        setState(() {
-                          AcessPage();
-                        });
-                        Navigator.of(context)
-                            .popAndPushNamed(AppRoutes.WIDGET_TAB);
+                        Navigator.pop(context);
                       },
                       child: Text(
                         'Confirmar',

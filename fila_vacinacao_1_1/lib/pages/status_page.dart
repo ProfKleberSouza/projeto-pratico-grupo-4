@@ -21,12 +21,19 @@ class _StatusPageState extends State<StatusPage> {
   FontModel font;
   void loadUser() async {
     user = await Users().getuser();
-
-    _streamControler.sink.add(user);
+    _streamControler.add(user);
   }
 
   void loadFont() async {
     font = await Acessibilidade().getFontModel();
+  }
+
+  avatar() {
+    if (user.sexo.toLowerCase() == 'feminino') {
+      return Image.asset('assets/avatar_femi.png');
+    } else {
+      return Image.asset('assets/avatar_masc.png');
+    }
   }
 
   _body() {
@@ -72,10 +79,7 @@ class _StatusPageState extends State<StatusPage> {
                     Padding(
                       padding: const EdgeInsets.all(5.0),
                       child: CircleAvatar(
-                        child: Icon(
-                          Icons.person,
-                          size: 50,
-                        ),
+                        child: avatar(),
                         maxRadius: 50,
                       ),
                     ),

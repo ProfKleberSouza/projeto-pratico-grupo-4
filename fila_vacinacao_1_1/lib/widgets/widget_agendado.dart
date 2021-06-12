@@ -1,9 +1,9 @@
 import 'package:fila_vacinacao_1_1/models/font.dart';
 import 'package:fila_vacinacao_1_1/models/user.dart';
-import 'package:fila_vacinacao_1_1/pages/status_page.dart';
+
 import 'package:fila_vacinacao_1_1/provider/acess_shared_pre.dart';
 import 'package:fila_vacinacao_1_1/provider/users_shared_pre.dart';
-import 'package:fila_vacinacao_1_1/routes/app_routes.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -152,16 +152,12 @@ class _WidgetAgendadoState extends State<WidgetAgendado> {
                                                   onPressed: () {
                                                     setState(() {
                                                       user.agendado = false;
-
                                                       user.dataAgendadaPrimeiraDose =
                                                           ' ';
                                                       Users().saveUser(user);
                                                       updateData(' ');
                                                     });
-                                                    Navigator.of(context)
-                                                        .popAndPushNamed(
-                                                            AppRoutes
-                                                                .WIDGET_TAB);
+                                                    Navigator.of(context).pop();
                                                   },
                                                   child: Text(
                                                     'Sim',

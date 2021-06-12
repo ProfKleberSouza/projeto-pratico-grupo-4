@@ -1,4 +1,5 @@
 import 'package:fila_vacinacao_1_1/models/font.dart';
+import 'package:fila_vacinacao_1_1/pages/acessibilidade_page.dart';
 import 'package:fila_vacinacao_1_1/provider/acess_shared_pre.dart';
 import 'package:fila_vacinacao_1_1/routes/app_routes.dart';
 import 'package:fila_vacinacao_1_1/services/auth.dart';
@@ -63,8 +64,14 @@ class _SettingsPageState extends State<SettingsPage> {
                                   child: InkWell(
                                     splashColor: Colors.blue,
                                     onTap: () {
-                                      Navigator.of(context)
-                                          .pushNamed(AppRoutes.ACESS_PAGE);
+                                      if (mounted) {
+                                        setState(() {});
+                                      }
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => AcessPage()),
+                                      ).then((value) => setState(() {}));
                                     },
                                     child: Padding(
                                       padding: const EdgeInsets.all(5.0),

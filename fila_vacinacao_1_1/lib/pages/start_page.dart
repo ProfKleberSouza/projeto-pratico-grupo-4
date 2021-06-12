@@ -10,7 +10,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:http/http.dart' as http;
-import 'package:intl/intl.dart';
 
 class StartPage extends StatefulWidget {
   @override
@@ -30,8 +29,6 @@ class _StartPageState extends State<StartPage> {
     if (response.body.isNotEmpty) {
       userTemp.prioridade = json.decode(response.body).toString();
       updateData();
-      print('PRIORIDADE');
-      print(userTemp.prioridade);
     }
   }
 
@@ -42,6 +39,11 @@ class _StartPageState extends State<StartPage> {
     _snapshots.collection('usuarios').doc(_user.currentUser.uid).update({
       'prioridade': userTemp.prioridade,
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
   }
 
   @override
@@ -61,17 +63,10 @@ class _StartPageState extends State<StartPage> {
               );
             }
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(
-                child: CircularProgressIndicator(),
-              );
-            }
-            if (snapshot.hasData) {
-              Future.delayed(
-                  Duration(seconds: 2), () => CircularProgressIndicator);
+              return CircularProgressIndicator();
             }
             var item = snapshot.data.data();
             FontModel _fontelog = FontModel(tamfonte: item['font']);
-
             UserModel _userlog = UserModel(
                 nome: item['nome'],
                 sexo: item['sexo'],
@@ -88,10 +83,8 @@ class _StartPageState extends State<StartPage> {
                 segundaAplicacao: item['segundaDose'],
                 prioridade: item['prioridade'],
                 dataAgendadaPrimeiraDose: item['dataAgendada']);
-
             Acessibilidade().setFontAcess(_fontelog);
             Users().saveUser(_userlog);
-
             return WidgetTab();
           }),
     );
