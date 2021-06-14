@@ -1,6 +1,6 @@
 import 'package:fila_vacinacao_1_1/models/font.dart';
-import 'package:fila_vacinacao_1_1/pages/agendamentos_page.dart';
 import 'package:fila_vacinacao_1_1/provider/acess_shared_pre.dart';
+import 'package:fila_vacinacao_1_1/routes/app_routes.dart';
 
 import 'package:flutter/material.dart';
 
@@ -67,14 +67,8 @@ class _WidgetAvaibleState extends State<WidgetAvaible> {
                               MaterialStateProperty.all<Color>(Colors.green),
                         ),
                         onPressed: () {
-                          if (mounted) {
-                            setState(() {});
-                          }
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => AgendamentoPage()),
-                          ).then((value) => setState(() {}));
+                          Navigator.of(context)
+                              .pushNamed(AppRoutes.AGENDAMENTO_PAGE);
                         },
                       ),
                     ),

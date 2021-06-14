@@ -1,3 +1,6 @@
+import 'package:fila_vacinacao_1_1/models/user.dart';
+import 'package:fila_vacinacao_1_1/provider/users_shared_pre.dart';
+
 import '../pages/info_page.dart';
 import '../pages/status_page.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +12,11 @@ class WidgetTab extends StatefulWidget {
 }
 
 class _WidgetTabState extends State<WidgetTab> {
+  UserModel user;
+  loadUser() async {
+    user = await Users().getuser();
+  }
+
   int _selectScreenIndex = 0;
   final List<Map<String, Object>> _screens = [
     {
@@ -31,13 +39,35 @@ class _WidgetTabState extends State<WidgetTab> {
     });
   }
 
+  _body() {
+    return FutureBuilder(
+        future: loadUser(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+          if (snapshot.hasError) {
+            print("${snapshot.error}");
+          }
+          return _screens[_selectScreenIndex]['screen'];
+        });
+  }
+
+  @override
+  void initState() {
+    loadUser();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(_screens[_selectScreenIndex]['title']),
       ),
-      body: _screens[_selectScreenIndex]['screen'],
+      body: _body(), //_screens[_selectScreenIndex]['screen'],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Theme.of(context).primaryColor,
         onTap: _selectScrenn,

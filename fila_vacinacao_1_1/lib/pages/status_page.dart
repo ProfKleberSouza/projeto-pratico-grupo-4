@@ -19,6 +19,7 @@ class _StatusPageState extends State<StatusPage> {
 
   UserModel user;
   FontModel font;
+
   void loadUser() async {
     user = await Users().getuser();
     _streamControler.add(user);
@@ -62,9 +63,10 @@ class _StatusPageState extends State<StatusPage> {
                         child: ListTile(
                           title: Center(
                             child: Text(
-                              user.nome,
+                              user.nome.toUpperCase(),
                               style: TextStyle(
                                   fontSize: Acessibilidade().fontSize(font)),
+                              textAlign: TextAlign.center,
                             ),
                           ),
                           subtitle: Center(
@@ -126,12 +128,12 @@ class _StatusPageState extends State<StatusPage> {
   @override
   void initState() {
     loadUser();
+    loadFont();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    loadFont();
     return Scaffold(
       body: _body(),
     );

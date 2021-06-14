@@ -43,12 +43,12 @@ class _StartPageState extends State<StartPage> {
 
   @override
   void initState() {
+    prioridade();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    prioridade();
     return Scaffold(
       body: StreamBuilder<DocumentSnapshot>(
           stream: _snapshots
@@ -63,7 +63,9 @@ class _StartPageState extends State<StartPage> {
               );
             }
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return CircularProgressIndicator();
+              return Center(
+                child: CircularProgressIndicator(),
+              );
             }
             var item = snapshot.data.data();
             FontModel _fontelog = FontModel(tamfonte: item['font']);

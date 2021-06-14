@@ -9,7 +9,7 @@ class SobrePage extends StatelessWidget {
         padding: const EdgeInsets.only(top: 25.0, left: 10, right: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Divider(
               height: 60,

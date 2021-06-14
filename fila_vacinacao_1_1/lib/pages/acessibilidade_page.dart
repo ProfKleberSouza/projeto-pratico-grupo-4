@@ -67,6 +67,7 @@ class _AcessPageState extends State<AcessPage> {
           return Padding(
             padding: const EdgeInsets.all(20),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Text(
                   'Ajuste no tamanho da Fonte',

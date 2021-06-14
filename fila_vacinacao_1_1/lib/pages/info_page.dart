@@ -13,7 +13,7 @@ class InfoPage extends StatefulWidget {
 
 class _InfoPageState extends State<InfoPage> {
   final GlobalKey<FormState> _formKeyInfoPage = GlobalKey<FormState>();
-
+  var _user = FirebaseAuth.instance;
   Save_Editing _saveEditing = Save_Editing.Editing;
   Map<String, String> _formData = {};
   var _snapshots = FirebaseFirestore.instance;
@@ -31,7 +31,6 @@ class _InfoPageState extends State<InfoPage> {
   }
 
   void updateData() {
-    var _user = FirebaseAuth.instance;
     _user.authStateChanges();
     _snapshots.collection('usuarios').doc(_user.currentUser.uid).update({
       'numero': _formData['numero'],
@@ -63,8 +62,6 @@ class _InfoPageState extends State<InfoPage> {
 
   @override
   Widget build(BuildContext context) {
-    var _user = FirebaseAuth.instance;
-
     _user.authStateChanges();
     return Scaffold(
       body: StreamBuilder<DocumentSnapshot>(

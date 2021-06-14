@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:fila_vacinacao_1_1/models/font.dart';
 import 'package:fila_vacinacao_1_1/models/user.dart';
 
@@ -16,9 +18,9 @@ class WidgetAgendado extends StatefulWidget {
 }
 
 class _WidgetAgendadoState extends State<WidgetAgendado> {
+  final StreamController _streamController = StreamController<UserModel>();
   FontModel font;
   var _snapshots = FirebaseFirestore.instance;
-  var _user = FirebaseAuth.instance;
   bool expand = false;
   UserModel user;
   void updateData(String data) {
@@ -32,7 +34,9 @@ class _WidgetAgendadoState extends State<WidgetAgendado> {
 
   void loadUser() async {
     user = await Users().getuser();
+
     font = await Acessibilidade().getFontModel();
+    _streamController.add(user);
   }
 
   double tamExpansionPainel() {
@@ -50,18 +54,17 @@ class _WidgetAgendadoState extends State<WidgetAgendado> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  void initState() {
     loadUser();
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
-      child: StreamBuilder<DocumentSnapshot>(
-          stream: _snapshots
-              .collection('usuarios')
-              .doc(_user.currentUser.uid)
-              .snapshots(),
-          builder: (
-            BuildContext context,
-            AsyncSnapshot<DocumentSnapshot> snapshot,
-          ) {
+      child: StreamBuilder(
+          stream: _streamController.stream,
+          builder: (context, snapshot) {
             if (snapshot.hasError) {
               return Center(
                 child: Text('Error ${snapshot.error}'),
@@ -72,11 +75,10 @@ class _WidgetAgendadoState extends State<WidgetAgendado> {
                 child: CircularProgressIndicator(),
               );
             }
-            var item = snapshot.data.data();
             return Padding(
               padding: const EdgeInsets.only(top: 22, right: 15, left: 15),
               child: SizedBox(
-                height: tamExpansionPainel(), //expand ? 218 : 65,
+                height: tamExpansionPainel(),
                 width: double.infinity,
                 child: Card(
                   elevation: 10,

@@ -277,7 +277,7 @@ class _AgendamentoPageState extends State<AgendamentoPage> {
                               width: 125,
                               child: TextButton(
                                 onPressed: () {
-                                  Navigator.pop(context);
+                                  Navigator.of(context).pop();
                                 },
                                 child: Text(
                                   'Voltar',
